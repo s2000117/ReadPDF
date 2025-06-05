@@ -20,6 +20,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.lifecycleScope
 import com.example.readpdf.ui.theme.ReadPDFTheme
@@ -37,10 +38,21 @@ import java.io.FileOutputStream
 import java.io.InputStream
 import java.util.*
 import android.speech.tts.UtteranceProgressListener
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+import androidx.compose.foundation.background
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.FolderOpen
+import androidx.compose.material.icons.filled.PlayArrow
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     private lateinit var tts: TextToSpeech
     private var pdfFile by mutableStateOf<File?>(null)
+    private var pdfFileName by mutableStateOf<String?>(null)
     private var onSpeakDone: (() -> Unit)? = null
     private var currentSentenceIndex = 0
     private var sentences: List<String> = emptyList()
@@ -50,9 +62,13 @@ class MainActivity : AppCompatActivity() {
     private var currentPage = mutableStateOf(0)
     private var totalPages = 0
     private lateinit var sharedPreferences: android.content.SharedPreferences
+    private var pageTextCache = mutableMapOf<Int, List<String>>() // ページごとのテキストキャッシュ
+    private var currentSentences: List<String> = emptyList()      // 現在ページの文リスト
+    private var currentSentenceIndexState = mutableStateOf(0)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
 
         sharedPreferences = getSharedPreferences("readaloud_prefs", Context.MODE_PRIVATE)
         currentSentenceIndex = sharedPreferences.getInt("sentence_index", 0)
@@ -106,6 +122,7 @@ class MainActivity : AppCompatActivity() {
             val tempFile = copyUriToFile(uri)
             if (tempFile != null) {
                 pdfFile = tempFile
+                pdfFileName = getFileNameFromUri(uri)
 
                 val previousPath = sharedPreferences.getString("pdf_path", null)
                 val isSameFile = previousPath == tempFile.absolutePath
@@ -133,102 +150,168 @@ class MainActivity : AppCompatActivity() {
         val composeView = ComposeView(this).apply {
             setContent {
                 ReadPDFTheme {
-                    Surface(modifier = Modifier.fillMaxSize()) {
-                        var progress by remember { mutableStateOf(0f) }
-                        var isSpeaking by remember { mutableStateOf(false) }
-                        var stopRequested by remember { mutableStateOf(false) }
-                        val scope = rememberCoroutineScope()
-
-                        Column(modifier = Modifier.fillMaxSize()) {
-                            Row(modifier = Modifier.padding(8.dp), verticalAlignment = Alignment.CenterVertically) {
-                                Text("速度:", modifier = Modifier.padding(end = 4.dp))
-                                Slider(
-                                    value = speechRateState.value,
-                                    onValueChange = {
-                                        speechRateState.value = it
-                                        tts.setSpeechRate(it)
-                                        sharedPreferences.edit().putFloat("speech_rate", it).apply()
-                                    },
-                                    valueRange = 0.5f..2.0f,
-                                    modifier = Modifier.weight(1f)
+                    Surface(modifier = Modifier.fillMaxSize(), color = Color.Transparent) {
+                        Box(
+                            modifier = Modifier
+                                .background(
+                                    Brush.verticalGradient(
+                                        colors = listOf(Color(0xFF23272A), Color(0xFF393E46))
+                                    )
                                 )
-                            }
+                                .fillMaxSize()
+                        ) {
+                            var progress by remember { mutableStateOf(0f) }
+                            var isSpeaking by remember { mutableStateOf(false) }
+                            var stopRequested by remember { mutableStateOf(false) }
+                            val scope = rememberCoroutineScope()
 
-                            Row(
+                            Column(
                                 modifier = Modifier
-                                    .fillMaxWidth()
+                                    .fillMaxSize()
                                     .padding(horizontal = 16.dp, vertical = 8.dp),
-                                horizontalArrangement = Arrangement.Center
+                                horizontalAlignment = Alignment.CenterHorizontally
                             ) {
-                                if (isSpeaking) {
-                                    Button(
-                                        onClick = {
-                                            tts.stop()
-                                            isSpeaking = false
+                                // ファイル名表示（小さめ）
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(top = 24.dp, bottom = 8.dp)
+                                ) {
+                                    Text(
+                                        text = pdfFileName ?: "ファイルが選択されていません",
+                                        style = MaterialTheme.typography.titleMedium.copy(
+                                            fontWeight = FontWeight.Bold,
+                                            color = Color(0xFF1976D2),
+                                            fontSize = 18.sp
+                                        ),
+                                        modifier = Modifier.align(Alignment.Center)
+                                    )
+                                }
+
+                                // 速度スライダー（背景なし・薄く）
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(bottom = 8.dp),
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Text(
+                                        "速度:",
+                                        color = Color.White,
+                                        modifier = Modifier.padding(end = 8.dp)
+                                    )
+                                    Slider(
+                                        value = speechRateState.value,
+                                        onValueChange = {
+                                            speechRateState.value = it
+                                            tts.setSpeechRate(it)
+                                            sharedPreferences.edit().putFloat("speech_rate", it).apply()
+                                        },
+                                        valueRange = 0.5f..2.0f,
+                                        modifier = Modifier.weight(1f)
+                                    )
+                                }
+
+                                // 再開・ファイル選択ボタンを横並び
+                                Row(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(vertical = 8.dp),
+                                    horizontalArrangement = Arrangement.SpaceEvenly
+                                ) {
+                                    if (isSpeaking) {
+                                        Button(
+                                            onClick = {
+                                                tts.stop()
+                                                isSpeaking = false
+                                            },
+                                            shape = RoundedCornerShape(24.dp),
+                                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1976D2)),
+                                            modifier = Modifier.weight(1f).padding(end = 4.dp)
+                                        ) {
+                                            Text("⏸️ 停止", color = Color.White)
                                         }
-                                    ) {
-                                        Text("⏸️ 停止")
+                                    } else if (sentences.isNotEmpty() && currentSentenceIndex < sentences.size) {
+                                        Button(
+                                            onClick = {
+                                                scope.launch {
+                                                    isSpeaking = true
+                                                    speakSentences()
+                                                }
+                                            },
+                                            shape = RoundedCornerShape(24.dp),
+                                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1976D2)),
+                                            modifier = Modifier.weight(1f).padding(end = 4.dp)
+                                        ) {
+                                            Icon(Icons.Default.PlayArrow, contentDescription = null)
+                                            Spacer(modifier = Modifier.width(4.dp))
+                                            Text("再開", color = Color.White)
+                                        }
                                     }
-                                } else if (sentences.isNotEmpty() && currentSentenceIndex < sentences.size) {
                                     Button(
-                                        onClick = {
-                                            scope.launch {
-                                                isSpeaking = true
-                                                speakSentences()
-                                            }
-                                        }
+                                        onClick = { pickPdfLauncher.launch("application/pdf") },
+                                        shape = RoundedCornerShape(24.dp),
+                                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF42A5F5)),
+                                        modifier = Modifier.weight(1f).padding(start = 4.dp)
                                     ) {
-                                        Text("▶️ 再開")
+                                        Icon(Icons.Default.FolderOpen, contentDescription = null)
+                                        Spacer(modifier = Modifier.width(4.dp))
+                                        Text("PDFファイルを選択", color = Color.White)
                                     }
                                 }
-                            }
 
-                            Row(modifier = Modifier.padding(8.dp)) {
-                                Button(onClick = { pickPdfLauncher.launch("application/pdf") }) {
-                                    Text("📂 PDFファイルを選択")
-                                }
-                            }
-
-                            pdfFile?.let { file ->
-                                val document = PDDocument.load(file)
-                                val renderer = PDFRenderer(document)
-                                totalPages = document.numberOfPages
-
-                                PdfViewer(
-                                    renderer = renderer,
-                                    currentPage = currentPage.value,
-                                    totalPages = totalPages,
-                                    progress = progress,
-                                    isSpeaking = isSpeaking,
-                                    onPrev = {
-                                        if (currentPage.value > 0) {
-                                            currentPage.value--
-                                            scope.launch { startReadingFromPage(currentPage.value) }
-                                        }
-                                    },
-                                    onNext = {
-                                        if (currentPage.value < totalPages - 1) {
-                                            currentPage.value++
-                                            scope.launch { startReadingFromPage(currentPage.value) }
-                                        }
-                                    },
-                                    onTap = { yRatio ->
-                                        if (isSpeaking) {
-                                            tts.stop()
-                                            isSpeaking = false
-                                        } else {
-                                            val closest = pageSentencePositions.withIndex()
-                                                .minByOrNull { (_, pos) -> kotlin.math.abs(pos - yRatio) }
-                                            val startIndex = closest?.index ?: 0
-                                            scope.launch {
-                                                isSpeaking = true
-                                                startReadingFromPage(currentPage.value, sentenceIndex = startIndex)
-                                            }
-                                        }
+                                // PDFビューア（最大化、黒背景なし）
+                                pdfFile?.let { file ->
+                                    val document = remember(file) { PDDocument.load(file) }
+                                    val renderer = remember(document) { PDFRenderer(document) }
+                                    DisposableEffect(document) {
+                                        onDispose { document.close() }
                                     }
-                                )
-
-                                document.close()
+                                    Box(
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .fillMaxHeight()
+                                            .align(Alignment.CenterHorizontally)
+                                    ) {
+                                        PdfViewer(
+                                            renderer = renderer,
+                                            currentPage = currentPage.value,
+                                            totalPages = totalPages,
+                                            progress = progress,
+                                            isSpeaking = isSpeaking,
+                                            onPrev = {
+                                                if (currentPage.value > 0) {
+                                                    currentPage.value--
+                                                    lifecycleScope.launch { startReadingFromPage(currentPage.value) }
+                                                }
+                                            },
+                                            onNext = {
+                                                if (currentPage.value < totalPages - 1) {
+                                                    currentPage.value++
+                                                    lifecycleScope.launch { startReadingFromPage(currentPage.value) }
+                                                }
+                                            },
+                                            onTap = { yRatio ->
+                                                // 現在ページ内の文リスト・位置リストから最も近い文を特定し、その文から再生
+                                                val indicesOnPage = sentencePageMap.withIndex().filter { it.value == currentPage.value }.map { it.index }
+                                                if (indicesOnPage.isNotEmpty()) {
+                                                    val positionsOnPage = indicesOnPage.map { pageSentencePositions[it] }
+                                                    val closest = positionsOnPage.withIndex().minByOrNull { (_, pos) -> kotlin.math.abs(pos - yRatio) }
+                                                    val startIndex = closest?.index?.let { indicesOnPage[it] } ?: indicesOnPage.first()
+                                                    lifecycleScope.launch {
+                                                        isSpeaking = true
+                                                        currentSentenceIndex = startIndex
+                                                        speakSentences()
+                                                    }
+                                                }
+                                            },
+                                            modifier = Modifier.fillMaxSize(),
+                                            pageSentencePositions = pageSentencePositions,
+                                            sentencePageMap = sentencePageMap,
+                                            currentSentenceIndex = currentSentenceIndexState.value
+                                        )
+                                    }
+                                }
                             }
                         }
                     }
@@ -255,20 +338,70 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun loadPageTextAsync(page: Int, onLoaded: (List<String>) -> Unit) {
+        lifecycleScope.launch {
+            val sentences = pageTextCache[page] ?: withContext(Dispatchers.IO) {
+                pdfFile?.let { file ->
+                    val doc = PDDocument.load(file)
+                    val (processed, _, _) = preprocessTextWithPageMap(doc, page)
+                    doc.close()
+                    pageTextCache[page] = processed
+                    processed
+                } ?: emptyList()
+            }
+            onLoaded(sentences)
+            // 先読み（次ページ）
+            preloadPageText(page + 1)
+        }
+    }
+
+    private fun preloadPageText(page: Int) {
+        if (pageTextCache.containsKey(page)) return
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                pdfFile?.let { file ->
+                    val doc = PDDocument.load(file)
+                    val (processed, _, _) = preprocessTextWithPageMap(doc, page)
+                    doc.close()
+                    pageTextCache[page] = processed
+                }
+            } catch (_: Exception) {}
+        }
+    }
+
+    private fun onPageChanged(newPage: Int) {
+        loadPageTextAsync(newPage) { sentences ->
+            currentSentences = sentences
+            currentSentenceIndex = 0
+            // 必要ならUI更新や自動読み上げ開始
+        }
+    }
+
     private suspend fun startReadingFromPage(page: Int, sentenceIndex: Int? = null) {
         pdfFile?.let { file ->
             val document = PDDocument.load(file)
-            val (processed, pageMap, positions) = preprocessTextWithPageMap(document, page)
+            totalPages = document.numberOfPages // ← ページ数をセット
+            val allSentences = mutableListOf<String>()
+            val allPageMap = mutableListOf<Int>()
+            val allPositions = mutableListOf<Float>()
+            for (p in 0 until totalPages) {
+                val (processed, pageMap, positions) = preprocessTextWithPageMap(document, p)
+                allSentences.addAll(processed)
+                allPageMap.addAll(pageMap)
+                allPositions.addAll(positions)
+            }
             document.close()
 
-            sentences = processed
-            sentencePageMap = pageMap
-            pageSentencePositions = positions
-            currentSentenceIndex = sentenceIndex ?: 0
+            sentences = allSentences
+            sentencePageMap = allPageMap
+            pageSentencePositions = allPositions
+            // 指定ページの最初の文にジャンプ
+            val startIdx = allPageMap.indexOf(page).takeIf { it >= 0 } ?: 0
+            currentSentenceIndex = sentenceIndex ?: startIdx
 
             if (sentences.isEmpty()) {
-                sentences = listOf("このページには読み上げ可能なテキストがありません。")
-                sentencePageMap = listOf(page)
+                sentences = listOf("このPDFには読み上げ可能なテキストがありません。")
+                sentencePageMap = listOf(0)
                 pageSentencePositions = listOf(0f)
             }
 
@@ -280,17 +413,17 @@ class MainActivity : AppCompatActivity() {
         while (currentSentenceIndex < sentences.size) {
             val sentence = sentences[currentSentenceIndex]
             val pageIndex = sentencePageMap.getOrElse(currentSentenceIndex) { 0 }
-            if (currentPage.value != pageIndex) currentPage.value = pageIndex
+            if (currentPage.value != pageIndex) currentPage.value = pageIndex // ページ同期
 
             sharedPreferences.edit()
                 .putInt("sentence_index", currentSentenceIndex)
                 .putInt("current_page", currentPage.value)
                 .apply()
 
-
             if (sentence == "__DELAY__") {
                 delay(300)
                 currentSentenceIndex++
+                currentSentenceIndexState.value = currentSentenceIndex
                 continue
             }
 
@@ -301,8 +434,8 @@ class MainActivity : AppCompatActivity() {
             completion.await()
             delay(100)
             currentSentenceIndex++
+            currentSentenceIndexState.value = currentSentenceIndex
         }
-
         if (currentPage.value < totalPages - 1) {
             currentPage.value++
             CoroutineScope(Dispatchers.Main).launch {
@@ -334,6 +467,27 @@ class MainActivity : AppCompatActivity() {
         return Triple(resultSentences, resultPageMap, resultPositions)
     }
 
+    private fun getFileNameFromUri(uri: Uri): String {
+        var result: String? = null
+        if (uri.scheme == "content") {
+            val cursor = contentResolver.query(uri, null, null, null, null)
+            cursor?.use {
+                if (it.moveToFirst()) {
+                    val idx = it.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME)
+                    if (idx >= 0) result = it.getString(idx)
+                }
+            }
+        }
+        if (result == null) {
+            result = uri.path
+            val cut = result?.lastIndexOf('/') ?: -1
+            if (cut != -1) {
+                result = result?.substring(cut + 1)
+            }
+        }
+        return result ?: "PDFファイル"
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         tts.stop()
@@ -350,7 +504,11 @@ fun PdfViewer(
     isSpeaking: Boolean,
     onPrev: () -> Unit,
     onNext: () -> Unit,
-    onTap: (Float) -> Unit
+    onTap: (Float) -> Unit,
+    modifier: Modifier,
+    pageSentencePositions: List<Float>,
+    sentencePageMap: List<Int>,
+    currentSentenceIndex: Int
 ) {
     val bitmap: Bitmap? = remember(currentPage) {
         try {
@@ -362,11 +520,12 @@ fun PdfViewer(
     }
 
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "ページ ${currentPage + 1} / $totalPages",
+            color = Color.White,
             modifier = Modifier.padding(8.dp)
         )
 
@@ -380,23 +539,48 @@ fun PdfViewer(
             }
         }
 
-        Box(
+        BoxWithConstraints(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f)
-                .pointerInput(Unit) {
-                    detectTapGestures { offset: Offset ->
-                        val yRatio = offset.y / size.height
-                        onTap(yRatio)
+        ) {
+            val density = LocalDensity.current
+            val maxHeightPx = with(density) { maxHeight.toPx() }
+            bitmap?.let {
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .pointerInput(maxHeightPx) {
+                            detectTapGestures { offset: Offset ->
+                                val yRatio = offset.y / maxHeightPx
+                                onTap(yRatio)
+                            }
+                        }
+                ) {
+                    Image(
+                        bitmap = it.asImageBitmap(),
+                        contentDescription = null,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                    // ハイライト描画
+                    val indicesOnPage = sentencePageMap.withIndex().filter { it.value == currentPage }.map { it.index }
+                    if (indicesOnPage.isNotEmpty()) {
+                        val positionsOnPage = indicesOnPage.map { pageSentencePositions[it] }
+                        val highlightIdx = indicesOnPage.indexOf(currentSentenceIndex)
+                        val highlightY = if (highlightIdx >= 0 && positionsOnPage.isNotEmpty()) positionsOnPage[highlightIdx] else null
+                        highlightY?.let { yRatio ->
+                            val highlightOffsetPx = yRatio * maxHeightPx
+                            val highlightOffsetDp = with(density) { highlightOffsetPx.toDp() }
+                            Box(
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .offset(y = highlightOffsetDp)
+                                    .height(24.dp)
+                                    .background(Color(0x80FFF59D))
+                            )
+                        }
                     }
                 }
-        ) {
-            bitmap?.let {
-                Image(
-                    bitmap = it.asImageBitmap(),
-                    contentDescription = null,
-                    modifier = Modifier.fillMaxSize()
-                )
             } ?: run {
                 Text("ページの読み込みに失敗しました。", modifier = Modifier.align(Alignment.Center))
             }
