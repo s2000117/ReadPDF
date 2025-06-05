@@ -1,0 +1,251 @@
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+        targetSdk = 34
+        ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:3: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.25 is available: 2.0.21 [GradleDependency]
+    id("org.jetbrains.kotlin.android") version "1.9.25"
+                                               ~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 35 [GradleDependency]
+    compileSdk = 34
+    ~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:52: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
+    implementation("androidx.activity:activity-compose:1.9.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:53: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
+    implementation("androidx.compose.material3:material3:1.2.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:54: Warning: A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.2 [GradleDependency]
+    implementation("androidx.compose.ui:ui:1.6.7")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:55: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.2 [GradleDependency]
+    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:56: Warning: A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8 [GradleDependency]
+    implementation("androidx.compose.material:material-icons-core:1.6.7")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:57: Warning: A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8 [GradleDependency]
+    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:58: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+    implementation("androidx.core:core-ktx:1.13.1")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:60: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+    implementation("com.google.android.material:material:1.11.0")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:64: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1 [GradleDependency]
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
+/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
+/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkServerTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
+/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
+/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar: Warning: checkServerTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
+
+   Explanation for issues of type "TrustAllX509TrustManager":
+   This check looks for X509TrustManager implementations whose
+   checkServerTrusted or checkClientTrusted methods do nothing (thus trusting
+   any certificate chain) which could result in insecure network traffic
+   caused by trusting arbitrary TLS/SSL certificates presented by peers.
+
+   https://goo.gle/TrustAllX509TrustManager
+
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/styles.xml:12: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+        <item name="android:statusBarColor" tools:targetApi="l">@color/purple_700</item>
+                                            ~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/themes.xml:9: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+                                            ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ObsoleteSdkInt":
+   This check flags version checks that are not necessary, because the
+   minSdkVersion (or surrounding known API level) is already at least as high
+   as the version checked for.
+
+   Similarly, it also looks for resources in -vNN folders, such as values-v14
+   where the version qualifier is less than or equal to the minSdkVersion,
+   where the contents should be merged into the best folder.
+
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:49: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    private var speechRateState = mutableStateOf(1.0f)
+                                  ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:50: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    private var currentPage = mutableStateOf(0)
+                              ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:137: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+                        var progress by remember { mutableStateOf(0f) }
+                                                   ~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AutoboxingStateCreation":
+   Calling mutableStateOf<T>() when T is either backed by a primitive type on
+   the JVM or is a value class results in a state implementation that requires
+   all state values to be boxed. This usually causes an additional allocation
+   for each state write, and adds some additional work to auto-unbox values
+   when reading the value of the state. Instead, prefer to use a specialized
+   primitive state implementation for Int, Long, Float, and Double when the
+   state does not need to track null values and does not override the default
+   SnapshotMutationPolicy. See mutableIntStateOf(), mutableLongStateOf(),
+   mutableFloatStateOf(), and mutableDoubleStateOf() for more information.
+
+   Vendor: Jetpack Compose
+   Identifier: androidx.compose.runtime
+   Feedback: https://issuetracker.google.com/issues/new?component=612128
+
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
+    <color name="purple_700">#3700B3</color>
+           ~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
+    <color name="teal_200">#03DAC5</color>
+           ~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
+    <color name="teal_700">#018786</color>
+           ~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.black appears to be unused [UnusedResources]
+    <color name="black">#000000</color>
+           ~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-mdpi/ic_launche.png: Warning: The resource R.mipmap.ic_launche appears to be unused [UnusedResources]
+/Users/medailab/projects/ReadPDF/app/src/main/res/values/styles.xml:3: Warning: The resource R.style.Theme_ReadAloudPDFOnlyFixed appears to be unused [UnusedResources]
+    <style name="Theme.ReadAloudPDFOnlyFixed" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+   Available options:
+
+   **skip-libraries** (default is true):
+   Whether the unused resource check should skip reporting unused resources in libraries.
+
+   Many libraries will declare resources that are part of the library surface; other modules depending on the library will also reference the resources. To avoid reporting all these resources as unused (in the context of a library), the unused resource check normally skips reporting unused resources in libraries. Instead, run the unused resource check on the consuming app module (along with `checkDependencies=true`).
+
+   However, there are cases where you want to check that all the resources declared in a library are used; in that case, you can disable the skip option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UnusedResources">
+           <option name="skip-libraries" value="true" />
+       </issue>
+   </lint>
+   ```
+
+/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+
+   Explanation for issues of type "IconLauncherShape":
+   According to the Android Design Guide
+   (https://d.android.com/r/studio-ui/designer/material/iconography) your
+   launcher icons should "use a distinct silhouette", a "three-dimensional,
+   front view, with a slight perspective as if viewed from above, so that
+   users perceive some depth."
+
+   The unique silhouette implies that your launcher icon should not be a
+   filled square.
+
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:117: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                    sharedPreferences.edit()
+                    ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:150: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                                        sharedPreferences.edit().putFloat("speech_rate", it).apply()
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:285: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+            sharedPreferences.edit()
+            ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseKtx":
+   The Android KTX libraries decorates the Android platform SDK as well as
+   various libraries with more convenient extension functions available from
+   Kotlin, allowing you to use default parameters, named parameters, and
+   more.
+
+   Available options:
+
+   **remove-defaults** (default is true):
+   Whether to skip arguments that match the defaults provided by the extension.
+
+   Extensions often provide default values for some of the parameters. For example:
+   ```kotlin
+   fun Path.readLines(charset: Charset = Charsets.UTF_8): List<String> { return Files.readAllLines(this, charset) }
+   ```
+   This lint check will by default automatically omit parameters that match the default, so if your code was calling
+
+   ```kotlin
+   Files.readAllLines(file, Charset.UTF_8)
+   ```
+   lint would replace this with
+   ```kotlin
+   file.readLines()
+   ```
+   rather than
+
+   ```kotlin
+   file.readLines(Charset.UTF_8
+   ```
+   You can turn this behavior off using this option.
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="remove-defaults" value="true" />
+       </issue>
+   </lint>
+   ```
+
+   **require-present** (default is true):
+   Whether to only offer extensions already available.
+
+   This option lets you only have lint suggest extension replacements if those extensions are already available on the class path (in other words, you're already depending on the library containing the extension method.)
+
+   To configure this option, use a `lint.xml` file with an <option> like this:
+
+   ```xml
+   <lint>
+       <issue id="UseKtx">
+           <option name="require-present" value="true" />
+       </issue>
+   </lint>
+   ```
+
+0 errors, 32 warnings, 3 hints
