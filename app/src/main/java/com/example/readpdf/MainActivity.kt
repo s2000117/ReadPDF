@@ -99,12 +99,14 @@ class MainActivity : AppCompatActivity() {
         })
 
         val savedPath = sharedPreferences.getString("pdf_path", null)
+        val savedName = sharedPreferences.getString("pdf_name", null)
         val savedPage = sharedPreferences.getInt("current_page", 0)
         val savedSentence = sharedPreferences.getInt("sentence_index", 0)
         if (savedPath != null) {
             val file = File(savedPath)
             if (file.exists()) {
                 pdfFile = file
+                pdfFileName = savedName ?: file.name // ファイル名も復元
                 currentPage.value = savedPage
                 currentSentenceIndex = savedSentence
                 lifecycleScope.launch {
@@ -121,11 +123,10 @@ class MainActivity : AppCompatActivity() {
 
             val tempFile = copyUriToFile(uri)
             if (tempFile != null) {
-                pdfFile = tempFile
-                pdfFileName = getFileNameFromUri(uri)
-
                 val previousPath = sharedPreferences.getString("pdf_path", null)
                 val isSameFile = previousPath == tempFile.absolutePath
+                pdfFile = tempFile
+                pdfFileName = getFileNameFromUri(uri)
 
                 // 新しいファイルであれば初期化
                 if (!isSameFile) {
@@ -133,6 +134,7 @@ class MainActivity : AppCompatActivity() {
                     currentSentenceIndex = 0
                     sharedPreferences.edit()
                         .putString("pdf_path", tempFile.absolutePath)
+                        .putString("pdf_name", pdfFileName) // ファイル名も保存
                         .putInt("current_page", 0)
                         .putInt("sentence_index", 0)
                         .apply()

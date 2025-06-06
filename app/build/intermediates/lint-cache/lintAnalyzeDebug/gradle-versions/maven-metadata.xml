@@ -447,6 +447,7 @@
       <version>8.14-rc-3</version>
       <version>8.14</version>
       <version>8.14.1</version>
+      <version>8.14.2</version>
       <version>9.0-milestone-1</version>
       <version>9.0-milestone-2</version>
       <version>9.0-milestone-3</version>
@@ -457,6 +458,6 @@
       <version>9.0.0-milestone-8</version>
       <version>9.0.0-milestone-9</version>
     </versions>
-    <lastUpdated>20250604130407</lastUpdated>
+    <lastUpdated>20250605133420</lastUpdated>
   </versioning>
 </metadata>

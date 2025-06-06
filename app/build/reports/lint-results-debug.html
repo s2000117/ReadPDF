@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 32 warnings and 3 hints</span>
+      <span class="mdl-layout-title">Lint Report: 34 warnings and 4 hints</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Jun 05 03:29:02 JST 2025 by AGP (8.10.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Fri Jun 06 17:24:11 JST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,10 +187,11 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
+      <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (1)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (11)</a>
       <a class="mdl-navigation__link" href="#TrustAllX509TrustManager"><i class="material-icons warning-icon">warning</i>Insecure TLS/SSL trust manager (5)</a>
-      <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (2)</a>
-      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (3)</a>
+      <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (3)</a>
+      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (4)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (6)</a>
       <a class="mdl-navigation__link" href="#IconLauncherShape"><i class="material-icons warning-icon">warning</i>The launcher icon shape should use a distinct silhouette (4)</a>
       <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (3)</a>
@@ -212,6 +213,9 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
 <tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
+<tr>
 <td class="countColumn">11</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
@@ -222,10 +226,10 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
 <tr>
 <td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -301,6 +305,51 @@ To suppress this error, use the issue id "OldTargetApi" as explained in the <a h
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationOldTargetApiLink" onclick="reveal('explanationOldTargetApi');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OldTargetApiCardLink" onclick="hideid('OldTargetApiCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="AndroidGradlePluginVersion"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="AndroidGradlePluginVersionCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete Android Gradle Plugin Version</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../../gradle/wrapper/gradle-wrapper.properties">../../../gradle/wrapper/gradle-wrapper.properties</a>:3</span>: <span class="message">A newer version of Gradle than 8.14.1 is available: 8.14.2</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span>distributionBase=GRADLE_USER_HOME
+<span class="lineno"> 2 </span>distributionPath=wrapper/dists
+<span class="caretline"><span class="lineno"> 3 </span>distributionUrl=<span class="warning">https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 4 </span>networkTimeout=10000
+<span class="lineno"> 5 </span>validateDistributionUrl=true
+<span class="lineno"> 6 </span>zipStoreBase=GRADLE_USER_HOME
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationAndroidGradlePluginVersion" style="display: none;">
+This detector looks for usage of the Android Gradle Plugin where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "AndroidGradlePluginVersion" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">AndroidGradlePluginVersion</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 4/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationAndroidGradlePluginVersionLink" onclick="reveal('explanationAndroidGradlePluginVersion');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="AndroidGradlePluginVersionCardLink" onclick="hideid('AndroidGradlePluginVersionCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="GradleDependency"></a>
@@ -503,6 +552,16 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReadpdfService.kt">../../src/main/java/com/example/readpdf/ReadpdfService.kt</a>:33</span>: <span class="message">Unnecessary; <code>SDK_INT</code> is always >= 26</span><br /><pre class="errorlines">
+<span class="lineno"> 30 </span>  <span class="keyword">val</span> channelId = <span class="string">"readpdf_channel"</span>
+<span class="lineno"> 31 </span>  <span class="keyword">val</span> channelName = <span class="string">"Readpdf"</span>
+<span class="lineno"> 32 </span>  <span class="keyword">val</span> notificationManager = getSystemService(NOTIFICATION_SERVICE) <span class="keyword">as</span> NotificationManager
+<span class="caretline"><span class="lineno"> 33 </span>  <span class="keyword">if</span> (<span class="warning">android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 34 </span>      <span class="keyword">val</span> channel = NotificationChannel(channelId, channelName, NotificationManager.IMPORTANCE_LOW)
+<span class="lineno"> 35 </span>      notificationManager.createNotificationChannel(channel)
+<span class="lineno"> 36 </span>  }
+</pre>
+
 <span class="location"><a href="../../src/main/res/values/styles.xml">../../src/main/res/values/styles.xml</a>:12</span>: <span class="message">Unnecessary; <code>SDK_INT</code> is always >= 21</span><br /><pre class="errorlines">
 <span class="lineno">  9 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorSecondaryVariant"</span>>@color/teal_700<span class="tag">&lt;/item></span>
 <span class="lineno"> 10 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorOnSecondary"</span>>@color/black<span class="tag">&lt;/item></span>
@@ -559,33 +618,43 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:49</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  46 </span>    private <span class="keyword">var</span> sentences: List&lt;String> = emptyList()
-<span class="lineno">  47 </span>    private <span class="keyword">var</span> sentencePageMap: List&lt;Int> = emptyList()
-<span class="lineno">  48 </span>    private <span class="keyword">var</span> pageSentencePositions: List&lt;Float> = emptyList()
-<span class="caretline"><span class="lineno">  49 </span>    private <span class="keyword">var</span> speechRateState = <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  50 </span>    private <span class="keyword">var</span> currentPage = mutableStateOf(<span class="number">0</span>)
-<span class="lineno">  51 </span>    private <span class="keyword">var</span> totalPages = <span class="number">0</span>
-<span class="lineno">  52 </span>    private lateinit <span class="keyword">var</span> sharedPreferences: android.content.SharedPreferences
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:61</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  58 </span>    private <span class="keyword">var</span> sentences: List&lt;String> = emptyList()
+<span class="lineno">  59 </span>    private <span class="keyword">var</span> sentencePageMap: List&lt;Int> = emptyList()
+<span class="lineno">  60 </span>    private <span class="keyword">var</span> pageSentencePositions: List&lt;Float> = emptyList()
+<span class="caretline"><span class="lineno">  61 </span>    private <span class="keyword">var</span> speechRateState = <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  62 </span>    private <span class="keyword">var</span> currentPage = mutableStateOf(<span class="number">0</span>)
+<span class="lineno">  63 </span>    private <span class="keyword">var</span> totalPages = <span class="number">0</span>
+<span class="lineno">  64 </span>    private lateinit <span class="keyword">var</span> sharedPreferences: android.content.SharedPreferences
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:50</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  47 </span>    private <span class="keyword">var</span> sentencePageMap: List&lt;Int> = emptyList()
-<span class="lineno">  48 </span>    private <span class="keyword">var</span> pageSentencePositions: List&lt;Float> = emptyList()
-<span class="lineno">  49 </span>    private <span class="keyword">var</span> speechRateState = mutableStateOf(<span class="number">1.0f</span>)
-<span class="caretline"><span class="lineno">  50 </span>    private <span class="keyword">var</span> currentPage = <span class="warning">mutableStateOf</span>(<span class="number">0</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  51 </span>    private <span class="keyword">var</span> totalPages = <span class="number">0</span>
-<span class="lineno">  52 </span>    private lateinit <span class="keyword">var</span> sharedPreferences: android.content.SharedPreferences
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:62</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  59 </span>    private <span class="keyword">var</span> sentencePageMap: List&lt;Int> = emptyList()
+<span class="lineno">  60 </span>    private <span class="keyword">var</span> pageSentencePositions: List&lt;Float> = emptyList()
+<span class="lineno">  61 </span>    private <span class="keyword">var</span> speechRateState = mutableStateOf(<span class="number">1.0f</span>)
+<span class="caretline"><span class="lineno">  62 </span>    private <span class="keyword">var</span> currentPage = <span class="warning">mutableStateOf</span>(<span class="number">0</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  63 </span>    private <span class="keyword">var</span> totalPages = <span class="number">0</span>
+<span class="lineno">  64 </span>    private lateinit <span class="keyword">var</span> sharedPreferences: android.content.SharedPreferences
+<span class="lineno">  65 </span>    private <span class="keyword">var</span> pageTextCache = mutableMapOf&lt;Int, List&lt;String>>() <span class="comment">// ページごとのテキストキャッシュ</span></pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:67</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  64 </span>    private lateinit <span class="keyword">var</span> sharedPreferences: android.content.SharedPreferences
+<span class="lineno">  65 </span>    private <span class="keyword">var</span> pageTextCache = mutableMapOf&lt;Int, List&lt;String>>() <span class="comment">// ページごとのテキストキャッシュ</span>
+<span class="lineno">  66 </span>    private <span class="keyword">var</span> currentSentences: List&lt;String> = emptyList()      <span class="comment">// 現在ページの文リスト</span>
+<span class="caretline"><span class="lineno">  67 </span>    private <span class="keyword">var</span> currentSentenceIndexState = <span class="warning">mutableStateOf</span>(<span class="number">0</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  68 </span>
+<span class="lineno">  69 </span>    override <span class="keyword">fun</span> onCreate(savedInstanceState: Bundle?) {
+<span class="lineno">  70 </span>        <span class="keyword">super</span>.onCreate(savedInstanceState)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:137</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno"> 134 </span>            setContent {
-<span class="lineno"> 135 </span>                ReadPDFTheme {
-<span class="lineno"> 136 </span>                    Surface(modifier = Modifier.fillMaxSize()) {
-<span class="caretline"><span class="lineno"> 137 </span>                        <span class="keyword">var</span> progress by remember { <span class="warning">mutableStateOf</span>(<span class="number">0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 138 </span>                        <span class="keyword">var</span> isSpeaking by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="lineno"> 139 </span>                        <span class="keyword">var</span> stopRequested by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="lineno"> 140 </span>                        <span class="keyword">val</span> scope = rememberCoroutineScope()
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:165</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno"> 162 </span>                       )
+<span class="lineno"> 163 </span>                       .fillMaxSize()
+<span class="lineno"> 164 </span>               ) {
+<span class="caretline"><span class="lineno"> 165 </span>                   <span class="keyword">var</span> progress by remember { <span class="warning">mutableStateOf</span>(<span class="number">0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 166 </span>                   <span class="keyword">var</span> isSpeaking by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno"> 167 </span>                   <span class="keyword">var</span> stopRequested by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno"> 168 </span>                   <span class="keyword">val</span> scope = rememberCoroutineScope()
 </pre>
 
 </div>
@@ -780,34 +849,34 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:117</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 114 </span>                <span class="keyword">if</span> (!isSameFile) {
-<span class="lineno"> 115 </span>                    currentPage.value = <span class="number">0</span>
-<span class="lineno"> 116 </span>                    currentSentenceIndex = <span class="number">0</span>
-<span class="caretline"><span class="lineno"> 117 </span>                    <span class="warning">sharedPreferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 118 </span>                        .putString(<span class="string">"pdf_path"</span>, tempFile.absolutePath)
-<span class="lineno"> 119 </span>                        .putInt(<span class="string">"current_page"</span>, <span class="number">0</span>)
-<span class="lineno"> 120 </span>                        .putInt(<span class="string">"sentence_index"</span>, <span class="number">0</span>)
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:135</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 132 </span>                <span class="keyword">if</span> (!isSameFile) {
+<span class="lineno"> 133 </span>                    currentPage.value = <span class="number">0</span>
+<span class="lineno"> 134 </span>                    currentSentenceIndex = <span class="number">0</span>
+<span class="caretline"><span class="lineno"> 135 </span>                    <span class="warning">sharedPreferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 136 </span>                        .putString(<span class="string">"pdf_path"</span>, tempFile.absolutePath)
+<span class="lineno"> 137 </span>                        .putString(<span class="string">"pdf_name"</span>, pdfFileName) <span class="comment">// ファイル名も保存</span>
+<span class="lineno"> 138 </span>                        .putInt(<span class="string">"current_page"</span>, <span class="number">0</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:150</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 147 </span>  onValueChange = {
-<span class="lineno"> 148 </span>      speechRateState.value = it
-<span class="lineno"> 149 </span>      tts.setSpeechRate(it)
-<span class="caretline"><span class="lineno"> 150 </span>      <span class="warning">sharedPreferences.edit()</span>.putFloat(<span class="string">"speech_rate"</span>, it).apply()</span>
-<span class="lineno"> 151 </span>  },
-<span class="lineno"> 152 </span>  valueRange = <span class="number">0.5f..2.0f</span>,
-<span class="lineno"> 153 </span>  modifier = Modifier.weight(<span class="number">1f</span>)
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:210</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 207 </span>  onValueChange = {
+<span class="lineno"> 208 </span>      speechRateState.value = it
+<span class="lineno"> 209 </span>      tts.setSpeechRate(it)
+<span class="caretline"><span class="lineno"> 210 </span>      <span class="warning">sharedPreferences.edit()</span>.putFloat(<span class="string">"speech_rate"</span>, it).apply()</span>
+<span class="lineno"> 211 </span>  },
+<span class="lineno"> 212 </span>  valueRange = <span class="number">0.5f..2.0f</span>,
+<span class="lineno"> 213 </span>  modifier = Modifier.weight(<span class="number">1f</span>)
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:285</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 282 </span>            <span class="keyword">val</span> pageIndex = sentencePageMap.getOrElse(currentSentenceIndex) { <span class="number">0</span> }
-<span class="lineno"> 283 </span>            <span class="keyword">if</span> (currentPage.value != pageIndex) currentPage.value = pageIndex
-<span class="lineno"> 284 </span>
-<span class="caretline"><span class="lineno"> 285 </span>            <span class="warning">sharedPreferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 286 </span>                .putInt(<span class="string">"sentence_index"</span>, currentSentenceIndex)
-<span class="lineno"> 287 </span>                .putInt(<span class="string">"current_page"</span>, currentPage.value)
-<span class="lineno"> 288 </span>                .apply()
+<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:420</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 417 </span>            <span class="keyword">val</span> pageIndex = sentencePageMap.getOrElse(currentSentenceIndex) { <span class="number">0</span> }
+<span class="lineno"> 418 </span>            <span class="keyword">if</span> (currentPage.value != pageIndex) currentPage.value = pageIndex <span class="comment">// ページ同期</span>
+<span class="lineno"> 419 </span>
+<span class="caretline"><span class="lineno"> 420 </span>            <span class="warning">sharedPreferences.edit()</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 421 </span>                .putInt(<span class="string">"sentence_index"</span>, currentSentenceIndex)
+<span class="lineno"> 422 </span>                .putInt(<span class="string">"current_page"</span>, currentPage.value)
+<span class="lineno"> 423 </span>                .apply()
 </pre>
 
 </div>

@@ -34,6 +34,11 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name="com.example.readpdf.ReadpdfService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="com.example.readpdf.androidx-startup"

@@ -21,6 +21,17 @@
 
    https://developer.android.com/distribute/best-practices/develop/target-sdk.html
 
+/Users/medailab/projects/ReadPDF/gradle/wrapper/gradle-wrapper.properties:3: Warning: A newer version of Gradle than 8.14.1 is available: 8.14.2 [AndroidGradlePluginVersion]
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
 /Users/medailab/projects/ReadPDF/app/build.gradle.kts:3: Warning: A newer version of org.jetbrains.kotlin.android than 1.9.25 is available: 2.0.21 [GradleDependency]
     id("org.jetbrains.kotlin.android") version "1.9.25"
                                                ~~~~~~~~
@@ -76,6 +87,9 @@
 
    https://goo.gle/TrustAllX509TrustManager
 
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReadpdfService.kt:33: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /Users/medailab/projects/ReadPDF/app/src/main/res/values/styles.xml:12: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
         <item name="android:statusBarColor" tools:targetApi="l">@color/purple_700</item>
                                             ~~~~~~~~~~~~~~~~~~~
@@ -92,15 +106,18 @@
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:49: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:61: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
     private var speechRateState = mutableStateOf(1.0f)
                                   ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:50: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:62: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
     private var currentPage = mutableStateOf(0)
                               ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:137: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-                        var progress by remember { mutableStateOf(0f) }
-                                                   ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:67: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    private var currentSentenceIndexState = mutableStateOf(0)
+                                            ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:165: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+                            var progress by remember { mutableStateOf(0f) }
+                                                       ~~~~~~~~~~~~~~
 
    Explanation for issues of type "AutoboxingStateCreation":
    Calling mutableStateOf<T>() when T is either backed by a primitive type on
@@ -182,13 +199,13 @@
    The unique silhouette implies that your launcher icon should not be a
    filled square.
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:117: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:135: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
                     sharedPreferences.edit()
                     ~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:150: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-                                        sharedPreferences.edit().putFloat("speech_rate", it).apply()
-                                        ~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:285: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:210: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                                            sharedPreferences.edit().putFloat("speech_rate", it).apply()
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt:420: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             sharedPreferences.edit()
             ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -248,4 +265,4 @@
    </lint>
    ```
 
-0 errors, 32 warnings, 3 hints
+0 errors, 34 warnings, 4 hints
