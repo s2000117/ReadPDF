@@ -1,0 +1,187 @@
+#!/usr/bin/env sh
+
+# Attempt to set APP_HOME
+PRG="$0"
+while [ -h "$PRG" ]; do
+    ls=`ls -ld "$PRG"`
+    link=`expr "$ls" : '.*-> $.*$$'`
+    if expr "$link" : '/.*' > /dev/null; then
+        PRG="$link"
+    else
+        PRG="`dirname \"$PRG\"`/$link"
+    fi
+done
+SAVED="`pwd`"
+cd "`dirname \"$PRG\"`/" >/dev/null
+APP_HOME="`pwd -P`"
+cd "$SAVED" >/dev/null
+
+CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
+
+# Determine the Java command to use to start the JVM.
+if [ -n "$JAVA_HOME" ] ; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+        # IBM's JDK on AIX uses strange locations for the executables
+        JAVACMD="$JAVA_HOME/jre/sh/java"
+    else
+        JAVACMD="$JAVA_HOME/bin/java"
+    fi
+    if [ ! -x "$JAVACMD" ] ; then
+        die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+    fi
+else
+    JAVACMD="java"
+    command -v $JAVACMD >/dev/null 2>&1 || { die "ERROR: JAVA_HOME is not set and no 'java' command could be found in your PATH.
+
+Please download the latest JDK from http://www.oracle.com/technetwork/java/javase/downloads/index.html
+and follow the instructions to install it." ; }
+fi
+
+# Increase the maximum file descriptors if we can.
+if [ "$OSTYPE" = "darwin"* ] ; then
+    MAX_FD=$(ulimit -H -n)
+    ulimit -n $MAX_FD &> /dev/null
+    # Apply for macOS Terminal.app
+    test $? -ne 0 && ulimit -n 2048
+else
+    MAX_FD="ulimit -H -n"
+fi
+
+# Set the default configuration file to use.
+DEFAULT_JVM_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.rmi/sun.rmi.transport.tcp=ALL-UNNAMED"
+APP_NAME="Gradle Wrapper"
+APP_BASE_NAME=`basename "$0"`
+
+# Use the maximum available, or set MAX_FD if you want to change it.
+MAX_FD="maximum"
+
+warn () {
+    echo "$*"
+}
+
+die () {
+    echo
+    echo "$*"
+    echo
+    exit 1
+}
+
+# OS specific support (must be 'true' or 'false').
+cygwin=false
+msys2=false
+darwin=false
+nonstop=false
+case "`uname`" in
+  CYGWIN* )
+    cygwin=true
+    ;;
+  Darwin* )
+    darwin=true
+    ;;
+  MINGW32* | MINGW64* )
+    msys2=true
+    ;;
+  NONSTOP* )
+    nonstop=true
+    ;;
+esac
+
+# For Cygwin, ensure paths are in UNIX format before anything is touched.
+if $cygwin ; then
+    [ -n "$HOME" ] || HOME=/home/`whoami`
+    [ -n "$APP_HOME" ] && APP_HOME=`cygpath --unix "$APP_HOME"`
+    [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
+fi
+
+# Attempt to set JAVA_HOME if it's not already set.
+if [ -z "$JAVA_HOME" ] ; then
+    # On macOS, use readlink to find the location of the java binary and then work backwards to find the Java Home
+    if $darwin ; then
+        JAVA_HOME=`/usr/libexec/java_home`
+    else
+        _java_bin="`which "$JAVACMD"`"
+        if [ -n "$_java_bin" ] ; then
+            if [ -x "$JAVA_HOME/bin/java" ] ; then
+                # Good, nothing to do.
+                :
+            elif [ ${#JAVA_HOME} -gt 0 ] && [ "`ls -ld "$JAVA_HOME" | awk '{ print $1 }'`" != "drwxr-xr-x" ]; then
+                die "ERROR: JAVA_HOME is set to an invalid directory: $JAVA_HOME
+
+Please set the JAVA_HOME variable in your environment to match the
+location of your Java installation."
+            else
+                JAVA_HOME="`dirname "$_java_bin"`"
+                case "`ls -ld "$JAVA_HOME" | awk '{ print $5 }'`" in
+                *x86_64*)
+                    JAVA_HOME=`expr "$JAVA_HOME" : '$.*$/jre/bin/amd64'
+                    ;;
+                *i386)
+                    JAVA_HOME=`expr "$JAVA_HOME" : '$.*$/jre/bin/i386'
+                    ;;
+                *sparcv9)
+                    JAVA_HOME=`expr "$JAVA_HOME" : '$.*$/jre/bin/sparcv9'
+                    ;;
+                *)
+                    JAVA_HOME="`dirname \"$_java_bin\"`"
+                    JAVA_HOME=`expr "$JAVA_HOME" : '$.*$/bin/java'`
+                    ;;
+                esac
+            fi
+        fi
+    fi
+fi
+
+# Determine the Java version.
+if [ -z "$JAVA_VERSION" ] ; then
+  JAVA_VERSION="Unknown"
+  if test -r "$JAVA_HOME/bin/java"; then
+      JAVA_VERSION=$("$JAVA_HOME"/bin/java -version 2>&1 | awk -F '"' '/version/ {print $2}')
+  fi
+fi
+
+# Setup the default command line arguments.
+DEFAULT_JAVA_OPTS="$DEFAULT_JVM_OPTS"
+
+# Append to DEFAULT_JAVA_OPTS if you need to add more (e.g. JAVAAGENT) on a per project basis.
+if [ -r "$APP_HOME/gradle.properties" ] && grep -q 'org.gradle.jvmargs=' "$APP_HOME/gradle.properties"; then
+  DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS $(grep 'org.gradle.jvmargs=' "$APP_HOME/gradle.properties" | cut -d'=' -f2-)"
+fi
+
+# Append to CLASSPATH for the gradle classes
+CLASSPATH=$CLASSPATH:$APP_HOME/gradle/wrapper
+
+# Determine the main class name. If not explicitly set, then use the value from wrapper.properties.
+MAIN_CLASS_NAME=$(grep 'wrapper.main.clas' "$APP_HOME/gradle/wrapper/gradle-wrapper.properties" | cut -d'=' -f2)
+
+# Find a suitable maximum file descriptor size for the java process
+if [ "$cygwin" = "false" ] && [ "$darwin" = "false" ] && [ "$nonstop" = "false" ]; then
+    MAX_FD_LIMIT=`ulimit -H -n`
+    if [ $? -eq 0 ]; then
+        if [ "$MAX_FD" = "maximum" ] ; then
+            MAX_FD="$MAX_FD_LIMIT"
+        fi
+        ulimit -n $MAX_FD
+        if [ $? -ne 0 ]; then
+            warn "Could not set maximum file descriptor limit: $MAX_FD"
+        fi
+    else
+        warn "Could not query maximum file descriptor limit: $MAX_FD_LIMIT"
+    fi
+fi
+
+# For Darwin, add options to specify how the application appears in the dock and menu bar.
+if $darwin; then
+    DEFAULT_JAVA_OPTS="$DEFAULT_JAVA_OPTS -Xdock:name=$APP_NAME -Xdock:icon=../gradle-wrapper.icns"
+fi
+
+# Setup the default args
+DEFAULT_APP_ARGS=""
+
+# Collect all arguments for the java command, following the rules
+# and processing the environment variables.
+eval set -- "$DEFAULT_JVM_OPTS" "$JAVA_OPTS" "$GRADLE_OPTS" "${APP_ARGS[@]}" -classpath "\"$CLASSPATH\"" "$MAIN_CLASS_NAME"
+
+exec "$JAVACMD" "$@"

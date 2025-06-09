@@ -1,0 +1,26 @@
+<lint-module
+    format="1"
+    dir="/Users/medailab/projects/ReadPDF/app"
+    name=":app"
+    type="APP"
+    maven="ReadPDF:app:unspecified"
+    agpVersion="8.10.1"
+    buildFolder="build"
+    bootClassPath="/Users/medailab/Library/Android/sdk/platforms/android-34/android.jar:/Users/medailab/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      disable="CoroutineCreationDuringComposition"
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true">
+    <severities>
+      <severity
+        id="CoroutineCreationDuringComposition"
+        severity="IGNORE" />
+    </severities>
+  </lintOptions>
+  <variant name="release"/>
+</lint-module>

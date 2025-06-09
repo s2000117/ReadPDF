@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.10.1" type="partial_results">
+    <map id="UnsafeIntentLaunch">
+            <map id="unprotected">
+                <entry
+                    name="com.example.readpdf.MainActivity"
+                    boolean="true"/>
+            </map>
+    </map>
+    <map id="UnusedResources">
+        <location id="R.color.black"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="8"
+            column="12"
+            startOffset="278"
+            endLine="8"
+            endColumn="24"
+            endOffset="290"/>
+        <location id="R.color.purple_700"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="4"
+            column="12"
+            startOffset="107"
+            endLine="4"
+            endColumn="29"
+            endOffset="124"/>
+        <location id="R.color.teal_200"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="5"
+            column="12"
+            startOffset="152"
+            endLine="5"
+            endColumn="27"
+            endOffset="167"/>
+        <location id="R.color.teal_700"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/colors.xml"
+            line="6"
+            column="12"
+            startOffset="195"
+            endLine="6"
+            endColumn="27"
+            endOffset="210"/>
+        <location id="R.mipmap.ic_launche"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_launche.png"/>
+        <location id="R.style.Theme_ReadAloudPDFOnlyFixed"
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="3"
+            column="12"
+            startOffset="109"
+            endLine="3"
+            endColumn="46"
+            endOffset="143"/>
+        <entry
+            name="model"
+            string="attr[colorPrimary(R)],color[purple_500(U),purple_700(D),teal_200(D),teal_700(D),white(U),black(D)],mipmap[ic_launcher(U),ic_launche(D)],string[app_name(U)],style[Theme_ReadPDF(U),Theme_ReadAloudPDFOnlyFixed(D),Theme_MaterialComponents_DayNight_NoActionBar(E),Theme_Material3_DayNight(R)];a^d^1^5^0,b^c^1^2^5^3^4^6;;;"/>
+    </map>
+
+</incidents>
