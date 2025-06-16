@@ -177,22 +177,21 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 33 warnings and 1 hint</span>
+      <span class="mdl-layout-title">Lint Report: 32 warnings and 4 hints</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Mon Jun 16 20:11:35 JST 2025 by AGP (8.10.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Tue Jun 17 03:42:43 JST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#ImplicitSamInstance"><i class="material-icons warning-icon">warning</i>Implicit SAM Instances (1)</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (1)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (11)</a>
       <a class="mdl-navigation__link" href="#TrustAllX509TrustManager"><i class="material-icons warning-icon">warning</i>Insecure TLS/SSL trust manager (5)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (3)</a>
-      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (1)</a>
+      <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (4)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (6)</a>
       <a class="mdl-navigation__link" href="#IconLauncherShape"><i class="material-icons warning-icon">warning</i>The launcher icon shape should use a distinct silhouette (4)</a>
       <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (1)</a>
@@ -210,9 +209,6 @@ document.getElementById(id).style.display = 'none';
 <table class="overview">
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#ImplicitSamInstance">ImplicitSamInstance</a>: Implicit SAM Instances</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
@@ -233,7 +229,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AutoboxingStateCreation">AutoboxingStateCreation</a>: <code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead.</td></tr>
 <tr>
 <td class="countColumn">6</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -260,55 +256,7 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="ImplicitSamInstance"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ImplicitSamInstanceCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Implicit SAM Instances</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:154</span>: <span class="message">This argument is a new instance so <code>stopService</code> will not remove anything</span><br /><pre class="errorlines">
-<span class="lineno"> 151 </span>
-<span class="lineno"> 152 </span>    override <span class="keyword">fun</span> onDestroy() {
-<span class="lineno"> 153 </span>        <span class="keyword">super</span>.onDestroy()
-<span class="caretline"><span class="lineno"> 154 </span>        stopService(<span class="warning">Intent(<span class="keyword">this</span>, ReadAloudService::<span class="keyword">class</span>.java)</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 155 </span>    }
-<span class="lineno"> 156 </span>}
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationImplicitSamInstance" style="display: none;">
-Kotlin's support for SAM (single abstract method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.<br/>
-<br/>
-In particular, passing a lambda variable in as a listener, and then later attempting to remove the listener will not work because a different instance is passed in.<br/><div class="moreinfo">More info: <a href="https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions">https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions</a>
-</div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "ImplicitSamInstance" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">ImplicitSamInstance</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Correctness</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationImplicitSamInstanceLink" onclick="reveal('explanationImplicitSamInstance');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ImplicitSamInstanceCardLink" onclick="hideid('ImplicitSamInstanceCard');">
-Dismiss</button>            </div>
-            </div>
-          </section><a name="OldTargetApi"></a>
+<a name="OldTargetApi"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OldTargetApiCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -510,13 +458,13 @@ Dismiss</button>            </div>
 <span class="lineno"> 59 </span>    implementation("androidx.multidex:multidex:2.0.1")
 <span class="caretline"><span class="lineno"> 60 </span>    implementation(<span class="warning">"com.google.android.material:material:1.11.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 61 </span>    implementation("org.jsoup:jsoup:1.17.2")
-<span class="lineno"> 62 </span>    implementation("org.apache.poi:poi-ooxml:5.2.3")
+<span class="lineno"> 62 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
 <span class="lineno"> 63 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
 </pre>
 
 <span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:64</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1</span><br /><pre class="errorlines">
 <span class="lineno"> 61 </span>    implementation("org.jsoup:jsoup:1.17.2")
-<span class="lineno"> 62 </span>    implementation("org.apache.poi:poi-ooxml:5.2.3")
+<span class="lineno"> 62 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
 <span class="lineno"> 63 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
 <span class="caretline"><span class="lineno"> 64 </span>    implementation(<span class="warning">"androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 65 </span>}
@@ -564,8 +512,8 @@ Dismiss</button>            </div>
 <span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar</a></span>: <span class="message"><code>checkClientTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
 <span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar</a></span>: <span class="message"><code>checkClientTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
 <span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar</a></span>: <span class="message"><code>checkServerTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
-<span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar</a></span>: <span class="message"><code>checkClientTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
-<span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar</a></span>: <span class="message"><code>checkServerTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
+<span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar</a></span>: <span class="message"><code>checkClientTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
+<span class="location"><a href="../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar">../../../../../.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar</a></span>: <span class="message"><code>checkServerTrusted</code> is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers</span><br />
 </div>
 <div class="metadata"><div class="explanation" id="explanationTrustAllX509TrustManager" style="display: none;">
 This check looks for X509TrustManager implementations whose <code>checkServerTrusted</code> or <code>checkClientTrusted</code> methods do nothing (thus trusting any certificate chain) which could result in insecure network traffic caused by trusting arbitrary TLS/SSL certificates presented by peers.<br/><div class="moreinfo">More info: <a href="https://goo.gle/TrustAllX509TrustManager">https://goo.gle/TrustAllX509TrustManager</a>
@@ -670,14 +618,44 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:74</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  71 </span>  <span class="keyword">val</span> composeView = ComposeView(<span class="keyword">this</span>).apply {
-<span class="lineno">  72 </span>      setContent {
-<span class="lineno">  73 </span>          ReadPDFTheme {
-<span class="caretline"><span class="lineno">  74 </span>              <span class="keyword">var</span> speechRate by remember { <span class="warning">mutableStateOf</span>(sharedPreferences.getFloat(<span class="string">"speech_rate"</span>, <span class="number">1.0f</span>)) }</span>
-<span class="lineno">  75 </span>              Surface(modifier = Modifier.fillMaxSize()) {
-<span class="lineno">  76 </span>                  Column(modifier = Modifier.padding(<span class="number">16.d</span>p)) {
-<span class="lineno">  77 </span>                      Button(onClick = { pickFileLauncher.launch(<span class="string">"*/*"</span>) }) {
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:41</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  38 </span>    <span class="keyword">val</span> scope = rememberCoroutineScope()
+<span class="lineno">  39 </span>
+<span class="lineno">  40 </span>    <span class="keyword">var</span> fileName by remember { mutableStateOf(<span class="string">"ファイル未選択"</span>) }
+<span class="caretline"><span class="lineno">  41 </span>    <span class="keyword">var</span> currentPage by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  42 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:42</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  39 </span>
+<span class="lineno">  40 </span>    <span class="keyword">var</span> fileName by remember { mutableStateOf(<span class="string">"ファイル未選択"</span>) }
+<span class="lineno">  41 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno">  42 </span>    <span class="keyword">var</span> totalPages by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+<span class="lineno">  45 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:46</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+<span class="lineno">  45 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="caretline"><span class="lineno">  46 </span>    <span class="keyword">var</span> speed by remember { <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  47 </span>    <span class="keyword">var</span> fileUri by remember { mutableStateOf&lt;Uri?>(<span class="keyword">null</span>) }
+<span class="lineno">  48 </span>    <span class="keyword">var</span> speechQueue by remember { mutableStateOf(listOf&lt;String>()) }
+<span class="lineno">  49 </span>    <span class="keyword">var</span> currentSpeechIndex by remember { mutableStateOf(<span class="number">0</span>) }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:49</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  46 </span>  <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
+<span class="lineno">  47 </span>  <span class="keyword">var</span> fileUri by remember { mutableStateOf&lt;Uri?>(<span class="keyword">null</span>) }
+<span class="lineno">  48 </span>  <span class="keyword">var</span> speechQueue by remember { mutableStateOf(listOf&lt;String>()) }
+<span class="caretline"><span class="lineno">  49 </span>  <span class="keyword">var</span> currentSpeechIndex by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  50 </span>
+<span class="lineno">  51 </span>  <span class="keyword">val</span> launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+<span class="lineno">  52 </span>      uri?.let {
 </pre>
 
 </div>
@@ -872,14 +850,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/MainActivity.kt">../../src/main/java/com/example/readpdf/MainActivity.kt</a>:87</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno">  84 </span>  value = speechRate,
-<span class="lineno">  85 </span>  onValueChange = {
-<span class="lineno">  86 </span>      speechRate = it
-<span class="caretline"><span class="lineno">  87 </span>      <span class="warning">sharedPreferences.edit()</span>.putFloat(<span class="string">"speech_rate"</span>, it).apply()</span>
-<span class="lineno">  88 </span>  },
-<span class="lineno">  89 </span>  valueRange = <span class="number">0.5f..2.0f</span>,
-<span class="lineno">  90 </span>  modifier = Modifier.weight(<span class="number">1f</span>)
+<span class="location"><a href="../../src/main/java/com/example/readpdf/PdfRendererHelper.kt">../../src/main/java/com/example/readpdf/PdfRendererHelper.kt</a>:21</span>: <span class="message">Use the KTX function <code>createBitmap</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>    <span class="keyword">return</span> pdfRenderer.use { renderer ->
+<span class="lineno"> 19 </span>        <span class="keyword">if</span> (pageIndex &lt; <span class="number">0</span> || pageIndex >= renderer.pageCount) <span class="keyword">return</span> <span class="keyword">null</span>
+<span class="lineno"> 20 </span>        <span class="keyword">val</span> page = renderer.openPage(pageIndex)
+<span class="caretline"><span class="lineno"> 21 </span>        <span class="keyword">val</span> bitmap = <span class="warning">Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span>        page.render(bitmap, <span class="keyword">null</span>, <span class="keyword">null</span>, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY)
+<span class="lineno"> 23 </span>        page.close()
+<span class="lineno"> 24 </span>        bitmap
 </pre>
 
 </div>

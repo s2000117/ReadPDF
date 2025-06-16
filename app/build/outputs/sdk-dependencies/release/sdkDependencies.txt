@@ -1233,10 +1233,10 @@ library {
   maven_library {
     groupId: "org.apache.poi"
     artifactId: "poi-ooxml"
-    version: "5.2.3"
+    version: "5.2.5"
   }
   digests {
-    sha256: "\233\217\366\354\365b\203b\231\316\025\231w\226\343\324\177\340c\245\225l\034}?n*K\366\346\vy"
+    sha256: "\306\255\001\241\f\357\241\322\251\301\265R\275B\223\243\354\242\233Q3S\361\354\201@A\323\215\251\354["
   }
   repo_index {
     value: 1
@@ -1246,10 +1246,10 @@ library {
   maven_library {
     groupId: "org.apache.poi"
     artifactId: "poi"
-    version: "5.2.3"
+    version: "5.2.5"
   }
   digests {
-    sha256: "\035L\201\242\203\341\'i=\270\236\205\337E\021\235\2351-V\206\322C\233[\351D\\,d\221U"
+    sha256: "5.\033D\245wz\362\337=}\304\b\315\251\367_\223-\016\001%\372\032}3j\023\300\246c\247"
   }
   repo_index {
     value: 1
@@ -1259,10 +1259,10 @@ library {
   maven_library {
     groupId: "commons-codec"
     artifactId: "commons-codec"
-    version: "1.15"
+    version: "1.16.0"
   }
   digests {
-    sha256: "\263\351\366\326:y\001\t\277\r\005f\021\373\355\034\366\220U\202m\357\353\230\224\247\023i\322F\355c"
+    sha256: "VY_\262\v\v\205\274\221\320\325\003\332\325\v\267\361\271\257\300\356\325\337\372l\273%\222\220\000HM"
   }
   repo_index {
     value: 1
@@ -1298,10 +1298,10 @@ library {
   maven_library {
     groupId: "commons-io"
     artifactId: "commons-io"
-    version: "2.11.0"
+    version: "2.15.0"
   }
   digests {
-    sha256: "\226\033/m\207\333\254\305\325J\277E\253zn$\225\370\233uY\211b\330\307#\316\251\274!\t\b"
+    sha256: "\243(\332\3270\222\035\031{j\233\031]\377\240\016A\311t\302\332\310\3767\350M1pk\312w\222"
   }
   repo_index {
     value: 1
@@ -1311,10 +1311,10 @@ library {
   maven_library {
     groupId: "com.zaxxer"
     artifactId: "SparseBitSet"
-    version: "1.2"
+    version: "1.3"
   }
   digests {
-    sha256: "\221\346\263\030\311\001\240\362\335\037l\347\201\326$tCZ\346\'\322/\272\311\262\033\2749\377\330\004\266"
+    sha256: "\367k\205\255\260\300\a!\256&{|\375\344\332\177q\323\022\034\302\026\f\237\300\f\f\211\370\305<\212"
   }
   repo_index {
     value: 1
@@ -1324,10 +1324,10 @@ library {
   maven_library {
     groupId: "org.apache.logging.log4j"
     artifactId: "log4j-api"
-    version: "2.18.0"
+    version: "2.21.1"
   }
   digests {
-    sha256: "\271w\005r3\025;$*\305\214\305\267\323\022\0216\271\303L\206\301\341\221\300B\272J\202\201D\305"
+    sha256: "\035\264\216\030\b\201\276\361\336\265\002\002 \006\240%\242H\330\366\242a\206x\233\f|\344\207\306\002\326"
   }
   repo_index {
     value: 1
@@ -1337,10 +1337,10 @@ library {
   maven_library {
     groupId: "org.apache.poi"
     artifactId: "poi-ooxml-lite"
-    version: "5.2.3"
+    version: "5.2.5"
   }
   digests {
-    sha256: "5\242\000\251\275\021\v\027dP\027\221p\210{\271\352\302\334\272G\240\235\223\311\036\203\257\347\vqG"
+    sha256: "mL\346slB,R\344\177\373\372\b\307\204\341\270\301\210\357\266\225\203\254\000\032\n\261`\"\327t"
   }
   repo_index {
     value: 1
@@ -1350,10 +1350,10 @@ library {
   maven_library {
     groupId: "org.apache.xmlbeans"
     artifactId: "xmlbeans"
-    version: "5.1.1"
+    version: "5.2.0"
   }
   digests {
-    sha256: "_HJx\276\327\034\277\3767\tg\213k\3354cx\032|a\306\331\207#0\256\313\361Pv*"
+    sha256: "Z4O2<\004\233p$\355\323\233\275X\243\216w\353D!\212\255\'\224\207\236\177J\303\312\035\341"
   }
   repo_index {
     value: 1
@@ -1363,10 +1363,10 @@ library {
   maven_library {
     groupId: "org.apache.commons"
     artifactId: "commons-compress"
-    version: "1.21"
+    version: "1.25.0"
   }
   digests {
-    sha256: "j\354\375TYr\212YV\001\317\240rX\3211\227/\3749\264\222\353H\275\325\226Wz/$J"
+    sha256: "\320\354\200\024\353\273\aI\364q\2001\"\262\027\226\257\335\362\351\216\031NCtb._\272\366\237I"
   }
   repo_index {
     value: 1
@@ -1376,10 +1376,10 @@ library {
   maven_library {
     groupId: "com.github.virtuald"
     artifactId: "curvesapi"
-    version: "1.07"
+    version: "1.08"
   }
   digests {
-    sha256: "\263\0259\315\317\030\235\236h\241\366\231\214\272\t\352\221/\231\365\362K\315\006P!+\032\371\323U\242"
+    sha256: "\255\225\260\213\213\277\235}\027\345\340\b\024\211\217\2423$\363+\305\266/\0327\200\036jV\316\000y"
   }
   repo_index {
     value: 1

@@ -2,24 +2,6 @@
 <issues format="6" by="lint 8.10.1">
 
     <issue
-        id="ImplicitSamInstance"
-        severity="Warning"
-        message="This argument is a new instance so `stopService` will not remove anything"
-        category="Correctness"
-        priority="6"
-        summary="Implicit SAM Instances"
-        explanation="Kotlin&apos;s support for SAM (single abstract method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.&#xA;&#xA;In particular, passing a lambda variable in as a listener, and then later attempting to remove the listener will not work because a different instance is passed in."
-        url="https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions"
-        urls="https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions"
-        errorLine1="        stopService(Intent(this, ReadAloudService::class.java))"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="154"
-            column="21"/>
-    </issue>
-
-    <issue
         id="OldTargetApi"
         severity="Warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
@@ -282,7 +264,7 @@
         url="https://goo.gle/TrustAllX509TrustManager"
         urls="https://goo.gle/TrustAllX509TrustManager">
         <location
-            file="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar"/>
+            file="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar"/>
     </issue>
 
     <issue
@@ -296,7 +278,7 @@
         url="https://goo.gle/TrustAllX509TrustManager"
         urls="https://goo.gle/TrustAllX509TrustManager">
         <location
-            file="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar"/>
+            file="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar"/>
     </issue>
 
     <issue
@@ -350,17 +332,65 @@
     <issue
         id="AutoboxingStateCreation"
         severity="Hint"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    var currentPage by remember { mutableStateOf(0) }"
+        errorLine2="                                  ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="41"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Hint"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    var totalPages by remember { mutableStateOf(0) }"
+        errorLine2="                                 ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="42"
+            column="34"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Hint"
         message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
         category="Performance"
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="                    var speechRate by remember { mutableStateOf(sharedPreferences.getFloat(&quot;speech_rate&quot;, 1.0f)) }"
-        errorLine2="                                                 ~~~~~~~~~~~~~~">
+        errorLine1="    var speed by remember { mutableStateOf(1.0f) }"
+        errorLine2="                            ~~~~~~~~~~~~~~">
         <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="74"
-            column="50"/>
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="46"
+            column="29"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Hint"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    var currentSpeechIndex by remember { mutableStateOf(0) }"
+        errorLine2="                                         ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="49"
+            column="42"/>
     </issue>
 
     <issue
@@ -506,17 +536,17 @@
     <issue
         id="UseKtx"
         severity="Warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        message="Use the KTX function `createBitmap` instead?"
         category="Productivity"
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                                        sharedPreferences.edit().putFloat(&quot;speech_rate&quot;, it).apply()"
-        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="            val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)"
+        errorLine2="                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="87"
-            column="41"/>
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/PdfRendererHelper.kt"
+            line="21"
+            column="26"/>
     </issue>
 
 </issues>

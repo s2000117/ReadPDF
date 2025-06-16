@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-30:12
+INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:1-30:12
 MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/medailab/.gradle/caches/8.14.1/transforms/e3ed8e8de5a70d24b17e7dbff6131935/transformed/jetified-material3-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.compose.material:material-icons-extended-android:1.6.7] /Users/medailab/.gradle/caches/8.14.1/transforms/dd3d37d292c8c5fb1005fcbc9f05eb75/transformed/jetified-material-icons-extended-release/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.compose.material:material-icons-core-android:1.6.7] /Users/medailab/.gradle/caches/8.14.1/transforms/798b897b34da66f701e5c1c109af3bb2/transformed/jetified-material-icons-core-release/AndroidManifest.xml:2:1-7:12
@@ -72,7 +72,6 @@ MERGED from [androidx.print:print:1.0.0] /Users/medailab/.gradle/caches/8.14.1/t
 MERGED from [androidx.multidex:multidex:2.0.1] /Users/medailab/.gradle/caches/8.14.1/transforms/3be1bf7e5809ad4ccef2bcc7902c3acc/transformed/multidex-2.0.1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.tom-roush:pdfbox-android:2.0.27.0] /Users/medailab/.gradle/caches/8.14.1/transforms/e316e92fca35a95c775d356fc7f0c842/transformed/jetified-pdfbox-android-2.0.27.0/AndroidManifest.xml:2:1-9:12
 	package
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:3:5-34
 		INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml
@@ -81,16 +80,16 @@ MERGED from [com.tom-roush:pdfbox-android:2.0.27.0] /Users/medailab/.gradle/cach
 	xmlns:android
 		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:6:5-77
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:5:5-77
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:6:22-74
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:5:22-74
 uses-permission#android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:7:5-92
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:6:5-92
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:7:22-89
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:6:22-89
 application
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:9:5-30:19
-INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:9:5-30:19
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:8:5-29:19
+INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:8:5-29:19
 MERGED from [com.google.android.material:material:1.11.0] /Users/medailab/.gradle/caches/8.14.1/transforms/f19a7e5d663a2245f03ca8baed726ac9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] /Users/medailab/.gradle/caches/8.14.1/transforms/f19a7e5d663a2245f03ca8baed726ac9/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/medailab/.gradle/caches/8.14.1/transforms/a36b2251f2ef6b6e7e7649dfea22bd63/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
@@ -112,39 +111,39 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/medailab/.gradle/cac
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /Users/medailab/.gradle/caches/8.14.1/transforms/dc9b6cc8d62b05eb0c0bb558b46e972e/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:12:9-35
 	android:label
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:12:9-41
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:11:9-41
 	android:icon
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:14:9-45
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:13:9-45
 activity#com.example.readpdf.MainActivity
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:16:9-23:20
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:15:9-22:20
 	android:exported
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:18:13-36
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:17:13-36
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:17:13-41
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:16:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:19:13-22:29
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:18:13-21:29
 action#android.intent.action.MAIN
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:20:27-74
 service#com.example.readpdf.ReadAloudService
-ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:25:9-28:61
+ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:24:9-27:61
 	android:exported
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:27:13-37
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:26:13-37
 	android:foregroundServiceType
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:28:13-58
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:27:13-58
 	android:name
-		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:26:13-45
+		ADDED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml:25:13-45
 uses-sdk
 INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/medailab/projects/ReadPDF/app/src/main/AndroidManifest.xml

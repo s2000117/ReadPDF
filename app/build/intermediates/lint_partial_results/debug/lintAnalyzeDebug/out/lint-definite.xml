@@ -2,20 +2,6 @@
 <incidents format="6" by="lint 8.10.1" type="incidents">
 
     <incident
-        id="ImplicitSamInstance"
-        severity="warning"
-        message="This argument is a new instance so `stopService` will not remove anything">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-            line="154"
-            column="21"
-            startOffset="6196"
-            endLine="154"
-            endColumn="63"
-            endOffset="6238"/>
-    </incident>
-
-    <incident
         id="OldTargetApi"
         severity="warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details.">
@@ -301,7 +287,7 @@
         severity="warning"
         message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
         <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar"/>
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar"/>
     </incident>
 
     <incident
@@ -309,7 +295,7 @@
         severity="warning"
         message="`checkServerTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
         <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.3/2efd11c940adb18c03eb9ce7ad88fc40ee6a196/poi-ooxml-5.2.3.jar"/>
+            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar"/>
     </incident>
 
     <incident
@@ -330,6 +316,54 @@
     <incident
         id="AutoboxingStateCreation"
         severity="informational"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`">
+        <fix-replace
+            description="Replace with mutableIntStateOf"
+            replacement="androidx.compose.runtime.mutableIntStateOf"
+            shortenNames="true"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                startOffset="1513"
+                endOffset="1527"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="41"
+            column="35"
+            startOffset="1513"
+            endLine="41"
+            endColumn="49"
+            endOffset="1527"/>
+    </incident>
+
+    <incident
+        id="AutoboxingStateCreation"
+        severity="informational"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`">
+        <fix-replace
+            description="Replace with mutableIntStateOf"
+            replacement="androidx.compose.runtime.mutableIntStateOf"
+            shortenNames="true"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                startOffset="1566"
+                endOffset="1580"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="42"
+            column="34"
+            startOffset="1566"
+            endLine="42"
+            endColumn="48"
+            endOffset="1580"/>
+    </incident>
+
+    <incident
+        id="AutoboxingStateCreation"
+        severity="informational"
         message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`">
         <fix-replace
             description="Replace with mutableFloatStateOf"
@@ -337,18 +371,42 @@
             shortenNames="true"
             priority="0">
             <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-                startOffset="2948"
-                endOffset="2962"/>
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                startOffset="1786"
+                endOffset="1800"/>
         </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-            line="74"
-            column="50"
-            startOffset="2948"
-            endLine="74"
-            endColumn="64"
-            endOffset="2962"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="46"
+            column="29"
+            startOffset="1786"
+            endLine="46"
+            endColumn="43"
+            endOffset="1800"/>
+    </incident>
+
+    <incident
+        id="AutoboxingStateCreation"
+        severity="informational"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`">
+        <fix-replace
+            description="Replace with mutableIntStateOf"
+            replacement="androidx.compose.runtime.mutableIntStateOf"
+            shortenNames="true"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                startOffset="1978"
+                endOffset="1992"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="49"
+            column="42"
+            startOffset="1978"
+            endLine="49"
+            endColumn="56"
+            endOffset="1992"/>
     </incident>
 
     <incident
@@ -386,71 +444,30 @@
     <incident
         id="UseKtx"
         severity="warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?">
-        <fix-composite
-            description="Replace with the edit extension function"
-            family="Replace with the edit extension function"
+        message="Use the KTX function `createBitmap` instead?">
+        <fix-replace
+            description="Replace with the createBitmap function"
+            family="Replace with the createBitmap function"
             robot="true"
-            independent="true">
-            <fix-replace
-                description="Replace with edit"
-                robot="true"
-                independent="true"
-                oldString="edit("
-                replacement="edit"
-                reformat="value"
-                imports="androidx.core.content.edit"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-                    startOffset="3823"
-                    endOffset="3828"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with  {"
-                robot="true"
-                independent="true"
-                oldString=")"
-                replacement=" {"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-                    startOffset="3828"
-                    endOffset="3829"/>
-            </fix-replace>
-            <fix-replace
-                description="Delete &quot;.&quot;"
-                robot="true"
-                independent="true"
-                oldString="."
-                replacement=""
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-                    startOffset="3829"
-                    endOffset="3830"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with }"
-                robot="true"
-                independent="true"
-                oldString=".apply()"
-                replacement="}"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-                    startOffset="3857"
-                    endOffset="3865"/>
-            </fix-replace>
-        </fix-composite>
+            independent="true"
+            oldString="Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)"
+            replacement="createBitmap(page.width, page.height)"
+            reformat="value"
+            imports="androidx.core.graphics.createBitmap"
+            priority="0">
+            <range
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/PdfRendererHelper.kt"
+                startOffset="706"
+                endOffset="775"/>
+        </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/MainActivity.kt"
-            line="87"
-            column="41"
-            startOffset="3805"
-            endLine="87"
-            endColumn="65"
-            endOffset="3829"/>
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/PdfRendererHelper.kt"
+            line="21"
+            column="26"
+            startOffset="706"
+            endLine="21"
+            endColumn="95"
+            endOffset="775"/>
     </incident>
 
 </incidents>
