@@ -2,7 +2,6 @@
 <metadata modelVersion="1.1.0">
   <groupId>org.gradle</groupId>
   <artifactId>gradle-tooling-api</artifactId>
-  <version>4.3</version>
   <versioning>
     <latest>9.0.0-milestone-9</latest>
     <release>9.0.0-milestone-9</release>
@@ -460,4 +459,5 @@
     </versions>
     <lastUpdated>20250605133420</lastUpdated>
   </versioning>
+  <version>4.3</version>
 </metadata>

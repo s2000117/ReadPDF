@@ -2,6 +2,24 @@
 <issues format="6" by="lint 8.10.1">
 
     <issue
+        id="ImplicitSamInstance"
+        severity="Warning"
+        message="This argument is a new instance so `stopService` will not remove anything"
+        category="Correctness"
+        priority="6"
+        summary="Implicit SAM Instances"
+        explanation="Kotlin&apos;s support for SAM (single abstract method) interfaces lets you pass a lambda to the interface. This will create a new instance on the fly even though there is no explicit constructor call. If you pass one of these lambdas or method references into a method which (for example) stores or compares the object identity, unexpected results may happen.&#xA;&#xA;In particular, passing a lambda variable in as a listener, and then later attempting to remove the listener will not work because a different instance is passed in."
+        url="https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions"
+        urls="https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions"
+        errorLine1="        stopService(Intent(this, ReadAloudService::class.java))"
+        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
+            line="154"
+            column="21"/>
+    </issue>
+
+    <issue
         id="OldTargetApi"
         severity="Warning"
         message="Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the `android.os.Build.VERSION_CODES` javadoc for details."
@@ -289,11 +307,11 @@
         priority="6"
         summary="Obsolete SDK_INT Version Check"
         explanation="This check flags version checks that are not necessary, because the `minSdkVersion` (or surrounding known API level) is already at least as high as the version checked for.&#xA;&#xA;Similarly, it also looks for resources in `-vNN` folders, such as `values-v14` where the version qualifier is less than or equal to the `minSdkVersion`, where the contents should be merged into the best folder."
-        errorLine1="        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReadpdfService.kt"
-            line="33"
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReadAloudService.kt"
+            line="88"
             column="13"/>
     </issue>
 
@@ -337,60 +355,12 @@
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    private var speechRateState = mutableStateOf(1.0f)"
-        errorLine2="                                  ~~~~~~~~~~~~~~">
+        errorLine1="                    var speechRate by remember { mutableStateOf(sharedPreferences.getFloat(&quot;speech_rate&quot;, 1.0f)) }"
+        errorLine2="                                                 ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="61"
-            column="35"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    private var currentPage = mutableStateOf(0)"
-        errorLine2="                              ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="62"
-            column="31"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    private var currentSentenceIndexState = mutableStateOf(0)"
-        errorLine2="                                            ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="67"
-            column="45"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="                            var progress by remember { mutableStateOf(0f) }"
-        errorLine2="                                                       ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="165"
-            column="56"/>
+            line="74"
+            column="50"/>
     </issue>
 
     <issue
@@ -541,44 +511,12 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                    sharedPreferences.edit()"
-        errorLine2="                    ~~~~~~~~~~~~~~~~~~~~~~~~">
+        errorLine1="                                        sharedPreferences.edit().putFloat(&quot;speech_rate&quot;, it).apply()"
+        errorLine2="                                        ~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="135"
-            column="21"/>
-    </issue>
-
-    <issue
-        id="UseKtx"
-        severity="Warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?"
-        category="Productivity"
-        priority="6"
-        summary="Use KTX extension function"
-        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                                            sharedPreferences.edit().putFloat(&quot;speech_rate&quot;, it).apply()"
-        errorLine2="                                            ~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="210"
-            column="45"/>
-    </issue>
-
-    <issue
-        id="UseKtx"
-        severity="Warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?"
-        category="Productivity"
-        priority="6"
-        summary="Use KTX extension function"
-        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="            sharedPreferences.edit()"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/MainActivity.kt"
-            line="420"
-            column="13"/>
+            line="87"
+            column="41"/>
     </issue>
 
 </issues>

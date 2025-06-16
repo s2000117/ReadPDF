@@ -8,6 +8,10 @@
         android:minSdkVersion="26"
         android:targetSdkVersion="34" />
 
+    <!-- Foreground service 関連パーミッション -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
     <permission
         android:name="com.example.readpdf.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
@@ -35,7 +39,7 @@
         </activity>
 
         <service
-            android:name="com.example.readpdf.ReadpdfService"
+            android:name="com.example.readpdf.ReadAloudService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
 
