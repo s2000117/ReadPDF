@@ -337,11 +337,27 @@
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    var currentIndex by remember { mutableStateOf(prefs.getInt(&quot;last_index&quot;, 0)) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="46"
+            column="36"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Hint"
+        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
         errorLine1="    var currentPage by remember { mutableStateOf(0) }"
         errorLine2="                                  ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="41"
+            line="47"
             column="35"/>
     </issue>
 
@@ -357,7 +373,7 @@
         errorLine2="                                 ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="42"
+            line="48"
             column="34"/>
     </issue>
 
@@ -373,24 +389,8 @@
         errorLine2="                            ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="46"
+            line="50"
             column="29"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var currentIndex by remember { mutableStateOf(0) }"
-        errorLine2="                                   ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="49"
-            column="36"/>
     </issue>
 
     <issue
@@ -547,6 +547,54 @@
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/PdfRendererHelper.kt"
             line="21"
             column="26"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            prefs.edit().putString(&quot;last_file&quot;, fileName).apply()"
+        errorLine2="            ~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="58"
+            column="13"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                        prefs.edit().putInt(&quot;last_index&quot;, currentIndex).apply()"
+        errorLine2="                        ~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="99"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                                prefs.edit().putInt(&quot;last_index&quot;, index).apply()"
+        errorLine2="                                ~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="142"
+            column="33"/>
     </issue>
 
 </issues>

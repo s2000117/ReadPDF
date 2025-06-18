@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 32 warnings and 4 hints</span>
+      <span class="mdl-layout-title">Lint Report: 35 warnings and 4 hints</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Jun 18 16:14:43 JST 2025 by AGP (8.10.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Jun 18 16:28:15 JST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -194,7 +194,7 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (4)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (6)</a>
       <a class="mdl-navigation__link" href="#IconLauncherShape"><i class="material-icons warning-icon">warning</i>The launcher icon shape should use a distinct silhouette (4)</a>
-      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (1)</a>
+      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (4)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -242,7 +242,7 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseKtx">UseKtx</a>: Use KTX extension function</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (60)</a>
 </td></tr>
@@ -618,44 +618,44 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:41</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  38 </span>    <span class="keyword">val</span> scope = rememberCoroutineScope()
-<span class="lineno">  39 </span>
-<span class="lineno">  40 </span>    <span class="keyword">var</span> fileName by remember { mutableStateOf(<span class="string">"ファイル未選択"</span>) }
-<span class="caretline"><span class="lineno">  41 </span>    <span class="keyword">var</span> currentPage by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  42 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:46</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
 <span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
 <span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
+<span class="caretline"><span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { <span class="warning">mutableStateOf</span>(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:42</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  39 </span>
-<span class="lineno">  40 </span>    <span class="keyword">var</span> fileName by remember { mutableStateOf(<span class="string">"ファイル未選択"</span>) }
-<span class="lineno">  41 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="caretline"><span class="lineno">  42 </span>    <span class="keyword">var</span> totalPages by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:47</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
 <span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
-<span class="lineno">  45 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
+<span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { mutableStateOf(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }
+<span class="caretline"><span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  50 </span>    <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:46</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
-<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
-<span class="lineno">  45 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="caretline"><span class="lineno">  46 </span>    <span class="keyword">var</span> speed by remember { <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  47 </span>    <span class="keyword">var</span> fileUri by remember { mutableStateOf&lt;Uri?>(<span class="keyword">null</span>) }
-<span class="lineno">  48 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
-<span class="lineno">  49 </span>    <span class="keyword">var</span> currentIndex by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:48</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
+<span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { mutableStateOf(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }
+<span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  50 </span>    <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
+<span class="lineno">  51 </span>    <span class="keyword">val</span> listState = rememberLazyListState()
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:49</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  46 </span>  <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
-<span class="lineno">  47 </span>  <span class="keyword">var</span> fileUri by remember { mutableStateOf&lt;Uri?>(<span class="keyword">null</span>) }
-<span class="lineno">  48 </span>  <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
-<span class="caretline"><span class="lineno">  49 </span>  <span class="keyword">var</span> currentIndex by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  50 </span>  <span class="keyword">val</span> listState = rememberLazyListState()
-<span class="lineno">  51 </span>
-<span class="lineno">  52 </span>  <span class="keyword">val</span> launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:50</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  47 </span>  <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  48 </span>  <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  49 </span>  <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
+<span class="caretline"><span class="lineno">  50 </span>  <span class="keyword">var</span> speed by remember { <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  51 </span>  <span class="keyword">val</span> listState = rememberLazyListState()
+<span class="lineno">  52 </span>
+<span class="lineno">  53 </span>  <span class="keyword">val</span> launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
 </pre>
 
 </div>
@@ -859,6 +859,35 @@ Dismiss</button>            </div>
 <span class="lineno"> 23 </span>        page.close()
 <span class="lineno"> 24 </span>        bitmap
 </pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:58</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  55 </span>  context.contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+<span class="lineno">  56 </span>  fileUri = it
+<span class="lineno">  57 </span>  fileName = getFileName(context, it)
+<span class="caretline"><span class="lineno">  58 </span>  <span class="warning">prefs.edit()</span>.putString(<span class="string">"last_file"</span>, fileName).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  59 </span>
+<span class="lineno">  60 </span>  <span class="keyword">when</span> {
+<span class="lineno">  61 </span>      fileName.endsWith(<span class="string">".pdf"</span>, <span class="keyword">true</span>) -> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:99</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  96 </span>  override <span class="keyword">fun</span> onDone(utteranceId: String?) {
+<span class="lineno">  97 </span>      <span class="keyword">if</span> (currentIndex + <span class="number">1</span> &lt; paragraphs.size) {
+<span class="lineno">  98 </span>          currentIndex++
+<span class="caretline"><span class="lineno">  99 </span>          <span class="warning">prefs.edit()</span>.putInt(<span class="string">"last_index"</span>, currentIndex).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 100 </span>          scope.launch { listState.animateScrollToItem(currentIndex) }
+<span class="lineno"> 101 </span>          tts.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, <span class="keyword">null</span>, <span class="string">"utt_$currentIndex"</span>)
+<span class="lineno"> 102 </span>      } <span class="keyword">else</span> {
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:142</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 139 </span>  .padding(<span class="number">8.d</span>p)
+<span class="lineno"> 140 </span>  .clickable {
+<span class="lineno"> 141 </span>      currentIndex = index
+<span class="caretline"><span class="lineno"> 142 </span>      <span class="warning">prefs.edit()</span>.putInt(<span class="string">"last_index"</span>, index).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 143 </span>      tts?.stop()
+<span class="lineno"> 144 </span>      tts?.speak(paragraphs[index], TextToSpeech.QUEUE_FLUSH, <span class="keyword">null</span>, <span class="string">"utt_$index"</span>)
+<span class="lineno"> 145 </span>      isPlaying = <span class="keyword">true</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationUseKtx" style="display: none;">
