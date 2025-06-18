@@ -11,7 +11,7 @@
     compileTarget="android-34"
     neverShrinking="true">
   <lintOptions
-      disable="CoroutineCreationDuringComposition"
+      disable="CoroutineCreationDuringComposition,UnrememberedMutableState"
       abortOnError="true"
       absolutePaths="true"
       checkReleaseBuilds="true"
@@ -19,6 +19,9 @@
     <severities>
       <severity
         id="CoroutineCreationDuringComposition"
+        severity="IGNORE" />
+      <severity
+        id="UnrememberedMutableState"
         severity="IGNORE" />
     </severities>
   </lintOptions>

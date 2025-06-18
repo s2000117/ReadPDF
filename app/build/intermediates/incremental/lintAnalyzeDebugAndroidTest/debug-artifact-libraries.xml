@@ -680,6 +680,34 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.compose.runtime:runtime-android:1.6.7@aar"
+      jars="/Users/medailab/.gradle/caches/8.14.1/transforms/a2a4151d8f30337c4661c0a221910f61/transformed/jetified-runtime-release/jars/classes.jar"
+      resolved="androidx.compose.runtime:runtime-android:1.6.7"
+      provided="true"
+      folder="/Users/medailab/.gradle/caches/8.14.1/transforms/a2a4151d8f30337c4661c0a221910f61/transformed/jetified-runtime-release"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="androidx.compose.runtime:runtime-saveable-android:1.6.7@aar"
+      jars="/Users/medailab/.gradle/caches/8.14.1/transforms/24ea3d3736a0207a1628d730700c9005/transformed/jetified-runtime-saveable-release/jars/classes.jar"
+      resolved="androidx.compose.runtime:runtime-saveable-android:1.6.7"
+      provided="true"
+      folder="/Users/medailab/.gradle/caches/8.14.1/transforms/24ea3d3736a0207a1628d730700c9005/transformed/jetified-runtime-saveable-release"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.versionedparcelable:versionedparcelable:1.1.1@aar"
       jars="/Users/medailab/.gradle/caches/8.14.1/transforms/a11e98746aac80672ffc714d4d465d0c/transformed/versionedparcelable-1.1.1/jars/classes.jar"
       resolved="androidx.versionedparcelable:versionedparcelable:1.1.1"
@@ -726,34 +754,6 @@
       jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/androidx.arch.core/core-common/2.2.0/5e1b8b81dfd5f52c56a8d53b18ca759c19a301f3/core-common-2.2.0.jar"
       resolved="androidx.arch.core:core-common:2.2.0"
       provided="true"/>
-  <library
-      name="androidx.compose.runtime:runtime-android:1.6.7@aar"
-      jars="/Users/medailab/.gradle/caches/8.14.1/transforms/a2a4151d8f30337c4661c0a221910f61/transformed/jetified-runtime-release/jars/classes.jar"
-      resolved="androidx.compose.runtime:runtime-android:1.6.7"
-      provided="true"
-      folder="/Users/medailab/.gradle/caches/8.14.1/transforms/a2a4151d8f30337c4661c0a221910f61/transformed/jetified-runtime-release"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
-      name="androidx.compose.runtime:runtime-saveable-android:1.6.7@aar"
-      jars="/Users/medailab/.gradle/caches/8.14.1/transforms/24ea3d3736a0207a1628d730700c9005/transformed/jetified-runtime-saveable-release/jars/classes.jar"
-      resolved="androidx.compose.runtime:runtime-saveable-android:1.6.7"
-      provided="true"
-      folder="/Users/medailab/.gradle/caches/8.14.1/transforms/24ea3d3736a0207a1628d730700c9005/transformed/jetified-runtime-saveable-release"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
   <library
       name="androidx.documentfile:documentfile:1.0.0@aar"
       jars="/Users/medailab/.gradle/caches/8.14.1/transforms/46a40a9bec75b244028f49def3860586/transformed/documentfile-1.0.0/jars/classes.jar"

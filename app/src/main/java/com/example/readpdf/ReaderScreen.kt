@@ -18,6 +18,7 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,27 +39,32 @@ fun ReaderScreen(tts: TextToSpeech?) {
     val scope = rememberCoroutineScope()
     val prefs = context.getSharedPreferences("reader_prefs", Context.MODE_PRIVATE)
 
-    var fileName by remember { mutableStateOf(prefs.getString("last_file", "ファイル未選択") ?: "ファイル未選択") }
-    var fileUri by remember { mutableStateOf<Uri?>(null) }
+    var fileName by rememberSaveable { mutableStateOf(prefs.getString("fileName", "ファイル未選択") ?: "ファイル未選択") }
+    var fileUri by rememberSaveable {
+        mutableStateOf(
+            prefs.getString("fileUri", null)?.let { Uri.parse(it) }
+        )
+    }
+    var currentIndex by rememberSaveable { mutableStateOf(prefs.getInt("currentIndex", 0)) }
+    val isPlaying = rememberSaveable { mutableStateOf(false) }
+    val speed = rememberSaveable { mutableStateOf(1.0f) }
+    var currentPage by rememberSaveable { mutableStateOf(0) }
+    var totalPages by remember { mutableStateOf(0) }
     var pageBitmap by remember { mutableStateOf<Bitmap?>(null) }
     var docText by remember { mutableStateOf("") }
     var paragraphs by remember { mutableStateOf<List<String>>(emptyList()) }
-    var currentIndex by remember { mutableStateOf(prefs.getInt("last_index", 0)) }
-    var currentPage by remember { mutableStateOf(0) }
-    var totalPages by remember { mutableStateOf(0) }
-    var isPlaying by remember { mutableStateOf(false) }
-    var speed by remember { mutableStateOf(1.0f) }
     val listState = rememberLazyListState()
 
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let {
-            context.contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
             fileUri = it
+            context.contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
             fileName = getFileName(context, it)
-            prefs.edit().putString("last_file", fileName).apply()
+            currentIndex = 0
+            prefs.edit().putString("fileUri", it.toString()).putString("fileName", fileName).putInt("currentIndex", 0).apply()
 
             when {
-                fileName.endsWith(".pdf", true) -> {
+                fileName.endsWith(".pdf", ignoreCase = true) -> {
                     val pageCount = PdfRendererHelper.getPageCount(context, it)
                     totalPages = pageCount
                     currentPage = 0
@@ -66,105 +72,160 @@ fun ReaderScreen(tts: TextToSpeech?) {
                     scope.launch {
                         docText = PdfTextExtractor.extractTextFromPage(context, it, 0)
                         paragraphs = docText.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
-                        currentIndex = 0
                     }
                 }
-                fileName.endsWith(".docx", true) -> {
+                fileName.endsWith(".docx", ignoreCase = true) -> {
                     scope.launch {
                         val text = extractDocxText(context.contentResolver.openInputStream(it))
                         docText = text
                         paragraphs = text.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
-                        currentIndex = prefs.getInt("last_index", 0).coerceAtMost(paragraphs.lastIndex)
                         pageBitmap = null
                         totalPages = 1
                         currentPage = 0
+                        if (paragraphs.isNotEmpty()) {
+                            tts?.setSpeechRate(speed.value)
+                            tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
+                            isPlaying.value = true
+                        }
                     }
                 }
                 else -> {
                     docText = "未対応のファイル形式です"
                     paragraphs = emptyList()
                     pageBitmap = null
+                    totalPages = 1
+                    currentPage = 0
                 }
             }
         }
     }
 
-    DisposableEffect(tts) {
-        if (tts != null) {
-            tts.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
-                override fun onStart(utteranceId: String?) {}
-                override fun onDone(utteranceId: String?) {
-                    if (currentIndex + 1 < paragraphs.size) {
-                        currentIndex++
-                        prefs.edit().putInt("last_index", currentIndex).apply()
-                        scope.launch { listState.animateScrollToItem(currentIndex) }
-                        tts.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
-                    } else {
-                        isPlaying = false
-                    }
+    LaunchedEffect(Unit) {
+        fileUri?.let { uri ->
+            context.contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            fileName = getFileName(context, uri)
+            currentIndex = 0
+
+            when {
+                fileName.endsWith(".pdf", ignoreCase = true) -> {
+                    totalPages = PdfRendererHelper.getPageCount(context, uri)
+                    currentPage = 0
+                    pageBitmap = PdfRendererHelper.renderPage(context, uri, 0)
+                    docText = PdfTextExtractor.extractTextFromPage(context, uri, 0)
+                    paragraphs = docText.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
                 }
-                override fun onError(utteranceId: String?) {
-                    isPlaying = false
+                fileName.endsWith(".docx", ignoreCase = true) -> {
+                    val text = extractDocxText(context.contentResolver.openInputStream(uri))
+                    docText = text
+                    paragraphs = text.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
+                    pageBitmap = null
+                    totalPages = 1
+                    currentPage = 0
                 }
-            })
+            }
         }
-        onDispose {}
     }
 
+    LaunchedEffect(tts) {
+        tts?.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
+            override fun onStart(utteranceId: String?) {}
+            override fun onDone(utteranceId: String?) {
+                if (currentIndex + 1 < paragraphs.size) {
+                    currentIndex++
+                    prefs.edit().putInt("currentIndex", currentIndex).apply()
+                    scope.launch {
+                        listState.animateScrollToItem(currentIndex)
+                    }
+                    tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
+                } else {
+                    isPlaying.value = false
+                }
+            }
+            override fun onError(utteranceId: String?) {
+                Log.e("TTS", "Error in utterance: $utteranceId")
+                isPlaying.value = false
+            }
+        })
+    }
+
+    // ==== 以下、UI表示部分 ====
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Button(onClick = { launcher.launch(arrayOf("application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) }) {
+            Button(onClick = {
+                launcher.launch(arrayOf(
+                    "application/pdf",
+                    "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                ))
+            }) {
                 Text("ファイルを選択")
             }
             Spacer(modifier = Modifier.width(16.dp))
             Text(fileName, maxLines = 1, overflow = TextOverflow.Ellipsis)
         }
 
-        Text(if (isPlaying) "再生中: $fileName" else "停止中", color = if (isPlaying) Color.Green else Color.Gray)
+        Spacer(modifier = Modifier.height(4.dp))
+        Text(
+            text = if (isPlaying.value) "再生中: $fileName" else "停止中",
+            color = if (isPlaying.value) Color.Green else Color.Gray
+        )
 
+        Spacer(modifier = Modifier.height(16.dp))
         val bitmap = pageBitmap
         if (bitmap != null) {
-            Image(bitmap = bitmap.asImageBitmap(), contentDescription = null, modifier = Modifier.fillMaxWidth().height(400.dp))
+            Image(
+                bitmap = bitmap.asImageBitmap(),
+                contentDescription = null,
+                modifier = Modifier.fillMaxWidth().height(400.dp)
+            )
         } else if (paragraphs.isNotEmpty()) {
             LaunchedEffect(currentIndex) {
                 listState.animateScrollToItem(currentIndex)
             }
-            LazyColumn(state = listState, modifier = Modifier.weight(1f)) {
+            LazyColumn(
+                state = listState,
+                modifier = Modifier.weight(1f).padding(vertical = 8.dp)
+            ) {
                 itemsIndexed(paragraphs) { index, paragraph ->
                     Text(
                         text = paragraph,
-                        color = if (index == currentIndex) Color.Red else Color.White,
+                        color = if (index == currentIndex) Color.Yellow else Color.White,
                         modifier = Modifier
-                            .fillMaxWidth()
                             .padding(8.dp)
                             .clickable {
                                 currentIndex = index
-                                prefs.edit().putInt("last_index", index).apply()
+                                prefs.edit().putInt("currentIndex", index).apply()
                                 tts?.stop()
-                                tts?.speak(paragraphs[index], TextToSpeech.QUEUE_FLUSH, null, "utt_$index")
-                                isPlaying = true
+                                tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
+                                isPlaying.value = true
                             }
                     )
                 }
             }
         }
 
+        Spacer(modifier = Modifier.height(16.dp))
         Row(verticalAlignment = Alignment.CenterVertically) {
             Button(onClick = {
-                if (!isPlaying && paragraphs.isNotEmpty()) {
-                    tts?.setSpeechRate(speed)
+                if (!isPlaying.value && paragraphs.isNotEmpty()) {
+                    tts?.setSpeechRate(speed.value)
                     tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
-                    isPlaying = true
+                    isPlaying.value = true
                 } else {
                     tts?.stop()
-                    isPlaying = false
+                    isPlaying.value = false
                 }
             }) {
-                Text(if (!isPlaying) "再生" else "停止")
+                Text(if (!isPlaying.value) "再生" else "停止")
             }
             Spacer(modifier = Modifier.width(16.dp))
-            Text("速度: %.1fx".format(speed))
-            Slider(value = speed, onValueChange = { speed = it }, valueRange = 0.5f..2.0f, steps = 3, modifier = Modifier.width(150.dp))
+            Text("速度: %.1fx".format(speed.value))
+            Slider(
+                value = speed.value,
+                onValueChange = { speed.value = it },
+                valueRange = 0.5f..2.0f,
+                steps = 3,
+                modifier = Modifier.width(150.dp)
+            )
         }
     }
 }

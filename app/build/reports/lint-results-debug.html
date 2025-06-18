@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 35 warnings and 4 hints</span>
+      <span class="mdl-layout-title">Lint Report: 37 warnings and 4 hints</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Wed Jun 18 16:28:15 JST 2025 by AGP (8.10.1)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Thu Jun 19 04:01:24 JST 2025 by AGP (8.10.1)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -188,13 +188,13 @@ document.getElementById(id).style.display = 'none';
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
       <a class="mdl-navigation__link" href="#AndroidGradlePluginVersion"><i class="material-icons warning-icon">warning</i>Obsolete Android Gradle Plugin Version (1)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (11)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (12)</a>
       <a class="mdl-navigation__link" href="#TrustAllX509TrustManager"><i class="material-icons warning-icon">warning</i>Insecure TLS/SSL trust manager (5)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (3)</a>
       <a class="mdl-navigation__link" href="#AutoboxingStateCreation"><i class="material-icons warning-icon">warning</i><code>State&lt;T></code> will autobox values assigned to this state. Use a specialized state type instead. (4)</a>
       <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (6)</a>
       <a class="mdl-navigation__link" href="#IconLauncherShape"><i class="material-icons warning-icon">warning</i>The launcher icon shape should use a distinct silhouette (4)</a>
-      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (4)</a>
+      <a class="mdl-navigation__link" href="#UseKtx"><i class="material-icons warning-icon">warning</i>Use KTX extension function (5)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -216,7 +216,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#AndroidGradlePluginVersion">AndroidGradlePluginVersion</a>: Obsolete Android Gradle Plugin Version</td></tr>
 <tr>
-<td class="countColumn">11</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">12</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
 </td></tr>
@@ -242,11 +242,11 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
-<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">5</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UseKtx">UseKtx</a>: Use KTX extension function</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#ExtraIssues">Included Additional Checks (60)</a>
 </td></tr>
-<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (42)</a>
+<tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (43)</a>
 </td></tr>
 </table>
 <br/>              </div>
@@ -380,94 +380,103 @@ Dismiss</button>            </div>
 <span class="lineno"> 11 </span>        applicationId = "com.example.readpdf"
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:55</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1</span><br /><pre class="errorlines">
-<span class="lineno"> 52 </span>}
-<span class="lineno"> 53 </span>
-<span class="lineno"> 54 </span>dependencies {
-<span class="caretline"><span class="lineno"> 55 </span>    implementation(<span class="warning">"androidx.activity:activity-compose:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 56 </span>    implementation("androidx.compose.material3:material3:1.2.1")
-<span class="lineno"> 57 </span>    implementation("androidx.compose.ui:ui:1.6.7")
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:56</span>: <span class="message">A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1</span><br /><pre class="errorlines">
+<span class="lineno"> 53 </span>}
+<span class="lineno"> 54 </span>
+<span class="lineno"> 55 </span>dependencies {
+<span class="caretline"><span class="lineno"> 56 </span>    implementation(<span class="warning">"androidx.activity:activity-compose:1.9.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 57 </span>    implementation("androidx.compose.material3:material3:1.2.1")
+<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui:1.6.7")
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:56</span>: <span class="message">A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2</span><br /><pre class="errorlines">
-<span class="lineno"> 53 </span>
-<span class="lineno"> 54 </span>dependencies {
-<span class="lineno"> 55 </span>    implementation("androidx.activity:activity-compose:1.9.0")
-<span class="caretline"><span class="lineno"> 56 </span>    implementation(<span class="warning">"androidx.compose.material3:material3:1.2.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 57 </span>    implementation("androidx.compose.ui:ui:1.6.7")
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
-<span class="lineno"> 59 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:57</span>: <span class="message">A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2</span><br /><pre class="errorlines">
+<span class="lineno"> 54 </span>
+<span class="lineno"> 55 </span>dependencies {
+<span class="lineno"> 56 </span>    implementation("androidx.activity:activity-compose:1.9.0")
+<span class="caretline"><span class="lineno"> 57 </span>    implementation(<span class="warning">"androidx.compose.material3:material3:1.2.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui:1.6.7")
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:57</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 54 </span>dependencies {
-<span class="lineno"> 55 </span>    implementation("androidx.activity:activity-compose:1.9.0")
-<span class="lineno"> 56 </span>    implementation("androidx.compose.material3:material3:1.2.1")
-<span class="caretline"><span class="lineno"> 57 </span>    implementation(<span class="warning">"androidx.compose.ui:ui:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
-<span class="lineno"> 59 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
-<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:58</span>: <span class="message">A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.3</span><br /><pre class="errorlines">
+<span class="lineno"> 55 </span>dependencies {
+<span class="lineno"> 56 </span>    implementation("androidx.activity:activity-compose:1.9.0")
+<span class="lineno"> 57 </span>    implementation("androidx.compose.material3:material3:1.2.1")
+<span class="caretline"><span class="lineno"> 58 </span>    implementation(<span class="warning">"androidx.compose.ui:ui:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
+<span class="lineno"> 61 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
 </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 6 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="GradleDependencyDivLink" onclick="reveal('GradleDependencyDiv');" />+ 7 More Occurrences...</button>
 <div id="GradleDependencyDiv" style="display: none">
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:58</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.2</span><br /><pre class="errorlines">
-<span class="lineno"> 55 </span>    implementation("androidx.activity:activity-compose:1.9.0")
-<span class="lineno"> 56 </span>    implementation("androidx.compose.material3:material3:1.2.1")
-<span class="lineno"> 57 </span>    implementation("androidx.compose.ui:ui:1.6.7")
-<span class="caretline"><span class="lineno"> 58 </span>    implementation(<span class="warning">"androidx.compose.ui:ui-tooling-preview:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 59 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
-<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
-<span class="lineno"> 61 </span>    implementation("androidx.core:core-ktx:1.13.1")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:59</span>: <span class="message">A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.3</span><br /><pre class="errorlines">
+<span class="lineno"> 56 </span>    implementation("androidx.activity:activity-compose:1.9.0")
+<span class="lineno"> 57 </span>    implementation("androidx.compose.material3:material3:1.2.1")
+<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui:1.6.7")
+<span class="caretline"><span class="lineno"> 59 </span>    implementation(<span class="warning">"androidx.compose.ui:ui-tooling-preview:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
+<span class="lineno"> 61 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+<span class="lineno"> 62 </span>    implementation("androidx.core:core-ktx:1.13.1")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:59</span>: <span class="message">A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8</span><br /><pre class="errorlines">
-<span class="lineno"> 56 </span>    implementation("androidx.compose.material3:material3:1.2.1")
-<span class="lineno"> 57 </span>    implementation("androidx.compose.ui:ui:1.6.7")
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
-<span class="caretline"><span class="lineno"> 59 </span>    implementation(<span class="warning">"androidx.compose.material:material-icons-core:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
-<span class="lineno"> 61 </span>    implementation("androidx.core:core-ktx:1.13.1")
-<span class="lineno"> 62 </span>    implementation("androidx.multidex:multidex:2.0.1")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:60</span>: <span class="message">A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8</span><br /><pre class="errorlines">
+<span class="lineno"> 57 </span>    implementation("androidx.compose.material3:material3:1.2.1")
+<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui:1.6.7")
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="caretline"><span class="lineno"> 60 </span>    implementation(<span class="warning">"androidx.compose.material:material-icons-core:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 61 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+<span class="lineno"> 62 </span>    implementation("androidx.core:core-ktx:1.13.1")
+<span class="lineno"> 63 </span>    implementation("androidx.multidex:multidex:2.0.1")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:60</span>: <span class="message">A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8</span><br /><pre class="errorlines">
-<span class="lineno"> 57 </span>    implementation("androidx.compose.ui:ui:1.6.7")
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
-<span class="lineno"> 59 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
-<span class="caretline"><span class="lineno"> 60 </span>    implementation(<span class="warning">"androidx.compose.material:material-icons-extended:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 61 </span>    implementation("androidx.core:core-ktx:1.13.1")
-<span class="lineno"> 62 </span>    implementation("androidx.multidex:multidex:2.0.1")
-<span class="lineno"> 63 </span>    implementation("com.google.android.material:material:1.11.0")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:61</span>: <span class="message">A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8</span><br /><pre class="errorlines">
+<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui:1.6.7")
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
+<span class="caretline"><span class="lineno"> 61 </span>    implementation(<span class="warning">"androidx.compose.material:material-icons-extended:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 62 </span>    implementation("androidx.core:core-ktx:1.13.1")
+<span class="lineno"> 63 </span>    implementation("androidx.multidex:multidex:2.0.1")
+<span class="lineno"> 64 </span>    implementation("com.google.android.material:material:1.11.0")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:61</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0</span><br /><pre class="errorlines">
-<span class="lineno"> 58 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
-<span class="lineno"> 59 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
-<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
-<span class="caretline"><span class="lineno"> 61 </span>    implementation(<span class="warning">"androidx.core:core-ktx:1.13.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 62 </span>    implementation("androidx.multidex:multidex:2.0.1")
-<span class="lineno"> 63 </span>    implementation("com.google.android.material:material:1.11.0")
-<span class="lineno"> 64 </span>    implementation("org.jsoup:jsoup:1.17.2")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:62</span>: <span class="message">A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0</span><br /><pre class="errorlines">
+<span class="lineno"> 59 </span>    implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
+<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-core:1.6.7")
+<span class="lineno"> 61 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+<span class="caretline"><span class="lineno"> 62 </span>    implementation(<span class="warning">"androidx.core:core-ktx:1.13.1"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 63 </span>    implementation("androidx.multidex:multidex:2.0.1")
+<span class="lineno"> 64 </span>    implementation("com.google.android.material:material:1.11.0")
+<span class="lineno"> 65 </span>    implementation("org.jsoup:jsoup:1.17.2")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:63</span>: <span class="message">A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0</span><br /><pre class="errorlines">
-<span class="lineno"> 60 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
-<span class="lineno"> 61 </span>    implementation("androidx.core:core-ktx:1.13.1")
-<span class="lineno"> 62 </span>    implementation("androidx.multidex:multidex:2.0.1")
-<span class="caretline"><span class="lineno"> 63 </span>    implementation(<span class="warning">"com.google.android.material:material:1.11.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 64 </span>    implementation("org.jsoup:jsoup:1.17.2")
-<span class="lineno"> 65 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
-<span class="lineno"> 66 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:64</span>: <span class="message">A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0</span><br /><pre class="errorlines">
+<span class="lineno"> 61 </span>    implementation("androidx.compose.material:material-icons-extended:1.6.7")
+<span class="lineno"> 62 </span>    implementation("androidx.core:core-ktx:1.13.1")
+<span class="lineno"> 63 </span>    implementation("androidx.multidex:multidex:2.0.1")
+<span class="caretline"><span class="lineno"> 64 </span>    implementation(<span class="warning">"com.google.android.material:material:1.11.0"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 65 </span>    implementation("org.jsoup:jsoup:1.17.2")
+<span class="lineno"> 66 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
+<span class="lineno"> 67 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
 </pre>
 
-<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:67</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1</span><br /><pre class="errorlines">
-<span class="lineno"> 64 </span>    implementation("org.jsoup:jsoup:1.17.2")
-<span class="lineno"> 65 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
-<span class="lineno"> 66 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
-<span class="caretline"><span class="lineno"> 67 </span>    implementation(<span class="warning">"androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 68 </span>}
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:68</span>: <span class="message">A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1</span><br /><pre class="errorlines">
+<span class="lineno"> 65 </span>    implementation("org.jsoup:jsoup:1.17.2")
+<span class="lineno"> 66 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
+<span class="lineno"> 67 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+<span class="caretline"><span class="lineno"> 68 </span>    implementation(<span class="warning">"androidx.lifecycle:lifecycle-runtime-ktx:2.6.2"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 69 </span>    implementation("androidx.compose.runtime:runtime-saveable:1.6.7")
+<span class="lineno"> 70 </span>}
+</pre>
+
+<span class="location"><a href="../../build.gradle.kts">../../build.gradle.kts</a>:69</span>: <span class="message">A newer version of androidx.compose.runtime:runtime-saveable than 1.6.7 is available: 1.8.3</span><br /><pre class="errorlines">
+<span class="lineno"> 66 </span>    implementation("org.apache.poi:poi-ooxml:5.2.5")
+<span class="lineno"> 67 </span>    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
+<span class="lineno"> 68 </span>    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+<span class="caretline"><span class="lineno"> 69 </span>    implementation(<span class="warning">"androidx.compose.runtime:runtime-saveable:1.6.7"</span>)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 70 </span>}
 </pre>
 
 </div>
@@ -618,44 +627,44 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:46</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  43 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
-<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
-<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
-<span class="caretline"><span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { <span class="warning">mutableStateOf</span>(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
-</pre>
-
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:47</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  44 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
-<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
-<span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { mutableStateOf(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }
-<span class="caretline"><span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="lineno">  50 </span>    <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
-</pre>
-
 <span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:48</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  45 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
-<span class="lineno">  46 </span>    <span class="keyword">var</span> currentIndex by remember { mutableStateOf(prefs.getInt(<span class="string">"last_index"</span>, <span class="number">0</span>)) }
-<span class="lineno">  47 </span>    <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="caretline"><span class="lineno">  48 </span>    <span class="keyword">var</span> totalPages by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  49 </span>    <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="lineno">  50 </span>    <span class="keyword">var</span> speed by remember { mutableStateOf(<span class="number">1.0f</span>) }
-<span class="lineno">  51 </span>    <span class="keyword">val</span> listState = rememberLazyListState()
+<span class="lineno">  45 </span>            prefs.getString(<span class="string">"fileUri"</span>, <span class="keyword">null</span>)?.let { Uri.parse(it) }
+<span class="lineno">  46 </span>        )
+<span class="lineno">  47 </span>    }
+<span class="caretline"><span class="lineno">  48 </span>    <span class="keyword">var</span> currentIndex by rememberSaveable { <span class="warning">mutableStateOf</span>(prefs.getInt(<span class="string">"currentIndex"</span>, <span class="number">0</span>)) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  49 </span>    <span class="keyword">val</span> isPlaying = rememberSaveable { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  50 </span>    <span class="keyword">val</span> speed = rememberSaveable { mutableStateOf(<span class="number">1.0f</span>) }
+<span class="lineno">  51 </span>    <span class="keyword">var</span> currentPage by rememberSaveable { mutableStateOf(<span class="number">0</span>) }
 </pre>
 
 <span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:50</span>: <span class="message">Prefer <code>mutableFloatStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
-<span class="lineno">  47 </span>  <span class="keyword">var</span> currentPage by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  48 </span>  <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
-<span class="lineno">  49 </span>  <span class="keyword">var</span> isPlaying by remember { mutableStateOf(<span class="keyword">false</span>) }
-<span class="caretline"><span class="lineno">  50 </span>  <span class="keyword">var</span> speed by remember { <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  51 </span>  <span class="keyword">val</span> listState = rememberLazyListState()
-<span class="lineno">  52 </span>
-<span class="lineno">  53 </span>  <span class="keyword">val</span> launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+<span class="lineno">  47 </span>    }
+<span class="lineno">  48 </span>    <span class="keyword">var</span> currentIndex by rememberSaveable { mutableStateOf(prefs.getInt(<span class="string">"currentIndex"</span>, <span class="number">0</span>)) }
+<span class="lineno">  49 </span>    <span class="keyword">val</span> isPlaying = rememberSaveable { mutableStateOf(<span class="keyword">false</span>) }
+<span class="caretline"><span class="lineno">  50 </span>    <span class="keyword">val</span> speed = rememberSaveable { <span class="warning">mutableStateOf</span>(<span class="number">1.0f</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  51 </span>    <span class="keyword">var</span> currentPage by rememberSaveable { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  52 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  53 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:51</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  48 </span>    <span class="keyword">var</span> currentIndex by rememberSaveable { mutableStateOf(prefs.getInt(<span class="string">"currentIndex"</span>, <span class="number">0</span>)) }
+<span class="lineno">  49 </span>    <span class="keyword">val</span> isPlaying = rememberSaveable { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  50 </span>    <span class="keyword">val</span> speed = rememberSaveable { mutableStateOf(<span class="number">1.0f</span>) }
+<span class="caretline"><span class="lineno">  51 </span>    <span class="keyword">var</span> currentPage by rememberSaveable { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  52 </span>    <span class="keyword">var</span> totalPages by remember { mutableStateOf(<span class="number">0</span>) }
+<span class="lineno">  53 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="lineno">  54 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:52</span>: <span class="message">Prefer <code>mutableIntStateOf</code> instead of <code>mutableStateOf</code></span><br /><pre class="errorlines">
+<span class="lineno">  49 </span>    <span class="keyword">val</span> isPlaying = rememberSaveable { mutableStateOf(<span class="keyword">false</span>) }
+<span class="lineno">  50 </span>    <span class="keyword">val</span> speed = rememberSaveable { mutableStateOf(<span class="number">1.0f</span>) }
+<span class="lineno">  51 </span>    <span class="keyword">var</span> currentPage by rememberSaveable { mutableStateOf(<span class="number">0</span>) }
+<span class="caretline"><span class="lineno">  52 </span>    <span class="keyword">var</span> totalPages by remember { <span class="warning">mutableStateOf</span>(<span class="number">0</span>) }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  53 </span>    <span class="keyword">var</span> pageBitmap by remember { mutableStateOf&lt;Bitmap?>(<span class="keyword">null</span>) }
+<span class="lineno">  54 </span>    <span class="keyword">var</span> docText by remember { mutableStateOf(<span class="string">""</span>) }
+<span class="lineno">  55 </span>    <span class="keyword">var</span> paragraphs by remember { mutableStateOf&lt;List&lt;String>>(emptyList()) }
 </pre>
 
 </div>
@@ -860,34 +869,44 @@ Dismiss</button>            </div>
 <span class="lineno"> 24 </span>        bitmap
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:58</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno">  55 </span>  context.contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-<span class="lineno">  56 </span>  fileUri = it
-<span class="lineno">  57 </span>  fileName = getFileName(context, it)
-<span class="caretline"><span class="lineno">  58 </span>  <span class="warning">prefs.edit()</span>.putString(<span class="string">"last_file"</span>, fileName).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  59 </span>
-<span class="lineno">  60 </span>  <span class="keyword">when</span> {
-<span class="lineno">  61 </span>      fileName.endsWith(<span class="string">".pdf"</span>, <span class="keyword">true</span>) -> {
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:45</span>: <span class="message">Use the KTX extension function <code>String.toUri</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  42 </span>  <span class="keyword">var</span> fileName by rememberSaveable { mutableStateOf(prefs.getString(<span class="string">"fileName"</span>, <span class="string">"ファイル未選択"</span>) ?: <span class="string">"ファイル未選択"</span>) }
+<span class="lineno">  43 </span>  <span class="keyword">var</span> fileUri by rememberSaveable {
+<span class="lineno">  44 </span>      mutableStateOf(
+<span class="caretline"><span class="lineno">  45 </span>          prefs.getString(<span class="string">"fileUri"</span>, <span class="keyword">null</span>)?.let { <span class="warning">Uri.parse(it)</span> }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  46 </span>      )
+<span class="lineno">  47 </span>  }
+<span class="lineno">  48 </span>  <span class="keyword">var</span> currentIndex by rememberSaveable { mutableStateOf(prefs.getInt(<span class="string">"currentIndex"</span>, <span class="number">0</span>)) }
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:99</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno">  96 </span>  override <span class="keyword">fun</span> onDone(utteranceId: String?) {
-<span class="lineno">  97 </span>      <span class="keyword">if</span> (currentIndex + <span class="number">1</span> &lt; paragraphs.size) {
-<span class="lineno">  98 </span>          currentIndex++
-<span class="caretline"><span class="lineno">  99 </span>          <span class="warning">prefs.edit()</span>.putInt(<span class="string">"last_index"</span>, currentIndex).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 100 </span>          scope.launch { listState.animateScrollToItem(currentIndex) }
-<span class="lineno"> 101 </span>          tts.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, <span class="keyword">null</span>, <span class="string">"utt_$currentIndex"</span>)
-<span class="lineno"> 102 </span>      } <span class="keyword">else</span> {
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:64</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno">  61 </span>  context.contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
+<span class="lineno">  62 </span>  fileName = getFileName(context, it)
+<span class="lineno">  63 </span>  currentIndex = <span class="number">0</span>
+<span class="caretline"><span class="lineno">  64 </span>  <span class="warning">prefs.edit()</span>.putString(<span class="string">"fileUri"</span>, it.toString()).putString(<span class="string">"fileName"</span>, fileName).putInt(<span class="string">"currentIndex"</span>, <span class="number">0</span>).apply()</span>
+<span class="lineno">  65 </span>
+<span class="lineno">  66 </span>  <span class="keyword">when</span> {
+<span class="lineno">  67 </span>      fileName.endsWith(<span class="string">".pdf"</span>, ignoreCase = <span class="keyword">true</span>) -> {
 </pre>
 
-<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:142</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
-<span class="lineno"> 139 </span>  .padding(<span class="number">8.d</span>p)
-<span class="lineno"> 140 </span>  .clickable {
-<span class="lineno"> 141 </span>      currentIndex = index
-<span class="caretline"><span class="lineno"> 142 </span>      <span class="warning">prefs.edit()</span>.putInt(<span class="string">"last_index"</span>, index).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 143 </span>      tts?.stop()
-<span class="lineno"> 144 </span>      tts?.speak(paragraphs[index], TextToSpeech.QUEUE_FLUSH, <span class="keyword">null</span>, <span class="string">"utt_$index"</span>)
-<span class="lineno"> 145 </span>      isPlaying = <span class="keyword">true</span></pre>
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:135</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 132 </span>            override <span class="keyword">fun</span> onDone(utteranceId: String?) {
+<span class="lineno"> 133 </span>                <span class="keyword">if</span> (currentIndex + <span class="number">1</span> &lt; paragraphs.size) {
+<span class="lineno"> 134 </span>                    currentIndex++
+<span class="caretline"><span class="lineno"> 135 </span>                    <span class="warning">prefs.edit()</span>.putInt(<span class="string">"currentIndex"</span>, currentIndex).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 136 </span>                    scope.launch {
+<span class="lineno"> 137 </span>                        listState.animateScrollToItem(currentIndex)
+<span class="lineno"> 138 </span>                    }
+</pre>
+
+<span class="location"><a href="../../src/main/java/com/example/readpdf/ReaderScreen.kt">../../src/main/java/com/example/readpdf/ReaderScreen.kt</a>:196</span>: <span class="message">Use the KTX extension function <code>SharedPreferences.edit</code> instead?</span><br /><pre class="errorlines">
+<span class="lineno"> 193 </span>  .padding(<span class="number">8.d</span>p)
+<span class="lineno"> 194 </span>  .clickable {
+<span class="lineno"> 195 </span>      currentIndex = index
+<span class="caretline"><span class="lineno"> 196 </span>      <span class="warning">prefs.edit()</span>.putInt(<span class="string">"currentIndex"</span>, index).apply()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 197 </span>      tts?.stop()
+<span class="lineno"> 198 </span>      tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, <span class="keyword">null</span>, <span class="string">"utt_$currentIndex"</span>)
+<span class="lineno"> 199 </span>      isPlaying.value = <span class="keyword">true</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationUseKtx" style="display: none;">
@@ -2284,6 +2303,15 @@ To configure this option, use a `lint.xml` file in the project or source folder 
 </div><div class="moreinfo">More info: <a href="https://developer.android.com/kotlin/interop#nullability_annotations">https://developer.android.com/kotlin/interop#nullability_annotations</a>
 </div>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 <br/>
+<br/></div>
+</div>
+</div>
+<div class="issue">
+<div class="id">UnrememberedMutableState<div class="issueSeparator"></div>
+</div>
+<div class="metadata">Disabled By: Command line flag<br/>
+<div class="explanation">
+State objects created during composition need to be `remember`ed, otherwise they will be recreated during recomposition, and lose their state. Either hoist the state to an object that is not created during composition, or wrap the state in a call to <code>remember</code>.<br/><br/>
 <br/></div>
 </div>
 </div>

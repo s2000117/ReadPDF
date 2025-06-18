@@ -79,7 +79,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="55"
+            line="56"
             column="20"/>
     </issue>
 
@@ -95,14 +95,14 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="56"
+            line="57"
             column="20"/>
     </issue>
 
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.2"
+        message="A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.3"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"
@@ -111,14 +111,14 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="57"
+            line="58"
             column="20"/>
     </issue>
 
     <issue
         id="GradleDependency"
         severity="Warning"
-        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.2"
+        message="A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.3"
         category="Correctness"
         priority="4"
         summary="Obsolete Gradle Dependency"
@@ -127,7 +127,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="58"
+            line="59"
             column="20"/>
     </issue>
 
@@ -143,7 +143,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="59"
+            line="60"
             column="20"/>
     </issue>
 
@@ -159,7 +159,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="60"
+            line="61"
             column="20"/>
     </issue>
 
@@ -175,7 +175,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="61"
+            line="62"
             column="20"/>
     </issue>
 
@@ -191,7 +191,7 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="63"
+            line="64"
             column="20"/>
     </issue>
 
@@ -207,7 +207,23 @@
         errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
-            line="67"
+            line="68"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        severity="Warning"
+        message="A newer version of androidx.compose.runtime:runtime-saveable than 1.6.7 is available: 1.8.3"
+        category="Correctness"
+        priority="4"
+        summary="Obsolete Gradle Dependency"
+        explanation="This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find."
+        errorLine1="    implementation(&quot;androidx.compose.runtime:runtime-saveable:1.6.7&quot;)"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/build.gradle.kts"
+            line="69"
             column="20"/>
     </issue>
 
@@ -337,11 +353,27 @@
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var currentIndex by remember { mutableStateOf(prefs.getInt(&quot;last_index&quot;, 0)) }"
+        errorLine1="    var currentIndex by rememberSaveable { mutableStateOf(prefs.getInt(&quot;currentIndex&quot;, 0)) }"
+        errorLine2="                                           ~~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="48"
+            column="44"/>
+    </issue>
+
+    <issue
+        id="AutoboxingStateCreation"
+        severity="Hint"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
+        category="Performance"
+        priority="3"
+        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
+        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
+        errorLine1="    val speed = rememberSaveable { mutableStateOf(1.0f) }"
         errorLine2="                                   ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="46"
+            line="50"
             column="36"/>
     </issue>
 
@@ -353,12 +385,12 @@
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var currentPage by remember { mutableStateOf(0) }"
-        errorLine2="                                  ~~~~~~~~~~~~~~">
+        errorLine1="    var currentPage by rememberSaveable { mutableStateOf(0) }"
+        errorLine2="                                          ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="47"
-            column="35"/>
+            line="51"
+            column="43"/>
     </issue>
 
     <issue
@@ -373,24 +405,8 @@
         errorLine2="                                 ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="48"
+            line="52"
             column="34"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var speed by remember { mutableStateOf(1.0f) }"
-        errorLine2="                            ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="50"
-            column="29"/>
     </issue>
 
     <issue
@@ -552,16 +568,32 @@
     <issue
         id="UseKtx"
         severity="Warning"
+        message="Use the KTX extension function `String.toUri` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="            prefs.getString(&quot;fileUri&quot;, null)?.let { Uri.parse(it) }"
+        errorLine2="                                                    ~~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="45"
+            column="53"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
         message="Use the KTX extension function `SharedPreferences.edit` instead?"
         category="Productivity"
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="            prefs.edit().putString(&quot;last_file&quot;, fileName).apply()"
+        errorLine1="            prefs.edit().putString(&quot;fileUri&quot;, it.toString()).putString(&quot;fileName&quot;, fileName).putInt(&quot;currentIndex&quot;, 0).apply()"
         errorLine2="            ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="58"
+            line="64"
             column="13"/>
     </issue>
 
@@ -573,12 +605,12 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                        prefs.edit().putInt(&quot;last_index&quot;, currentIndex).apply()"
-        errorLine2="                        ~~~~~~~~~~~~">
+        errorLine1="                    prefs.edit().putInt(&quot;currentIndex&quot;, currentIndex).apply()"
+        errorLine2="                    ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="99"
-            column="25"/>
+            line="135"
+            column="21"/>
     </issue>
 
     <issue
@@ -589,11 +621,11 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                                prefs.edit().putInt(&quot;last_index&quot;, index).apply()"
+        errorLine1="                                prefs.edit().putInt(&quot;currentIndex&quot;, index).apply()"
         errorLine2="                                ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="142"
+            line="196"
             column="33"/>
     </issue>
 

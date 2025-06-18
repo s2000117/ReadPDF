@@ -2335,6 +2335,7 @@ module_dependencies {
   dependency_index: 107
   dependency_index: 119
   dependency_index: 27
+  dependency_index: 43
 }
 repositories {
   maven_repo {

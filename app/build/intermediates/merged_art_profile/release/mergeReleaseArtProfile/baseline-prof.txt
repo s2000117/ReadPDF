@@ -1563,14 +1563,6 @@ PLandroidx/lifecycle/ReportFragment;->onDestroy()V
 PLandroidx/lifecycle/ReportFragment;->onPause()V
 PLandroidx/lifecycle/ReportFragment;->onStop()V
 
-# Baseline profile rules for androidx.compose.runtime.saveable
-# =============================================
-HSPLandroidx/compose/runtime/saveable/RememberSaveableKt**->**(**)**
-HSPLandroidx/compose/runtime/saveable/SaveableStateHolderImpl**->**(**)**
-HSPLandroidx/compose/runtime/saveable/SaveableStateHolderKt**->**(**)**
-HSPLandroidx/compose/runtime/saveable/SaveableStateRegistryKt;->**(**)**
-HSPLandroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->**(**)**
-Landroidx/compose/runtime/saveable/*;
 # Baseline profile rules for androidx.compose.runtime
 # =============================================
 #
@@ -2555,6 +2547,14 @@ HSPLkotlinx/coroutines/sync/MutexKt;->access$getEMPTY_UNLOCKED$p()Lkotlinx/corou
 HSPLkotlinx/coroutines/sync/MutexKt;->access$getLOCKED$p()Lkotlinx/coroutines/internal/Symbol;
 HSPLkotlinx/coroutines/sync/MutexKt;->access$getUNLOCKED$p()Lkotlinx/coroutines/internal/Symbol;
 
+# Baseline profile rules for androidx.compose.runtime.saveable
+# =============================================
+HSPLandroidx/compose/runtime/saveable/RememberSaveableKt**->**(**)**
+HSPLandroidx/compose/runtime/saveable/SaveableStateHolderImpl**->**(**)**
+HSPLandroidx/compose/runtime/saveable/SaveableStateHolderKt**->**(**)**
+HSPLandroidx/compose/runtime/saveable/SaveableStateRegistryKt;->**(**)**
+HSPLandroidx/compose/runtime/saveable/SaveableStateRegistryImpl;->**(**)**
+Landroidx/compose/runtime/saveable/*;
 # Baseline Profile Rules for androidx.startup
 
 Landroidx/startup/AppInitializer;

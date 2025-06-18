@@ -38,33 +38,36 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
 /Users/medailab/projects/ReadPDF/app/build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 35 [GradleDependency]
     compileSdk = 34
     ~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:55: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:56: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
     implementation("androidx.activity:activity-compose:1.9.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:56: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:57: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
     implementation("androidx.compose.material3:material3:1.2.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:57: Warning: A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.2 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:58: Warning: A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.3 [GradleDependency]
     implementation("androidx.compose.ui:ui:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:58: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.2 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:59: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.3 [GradleDependency]
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:59: Warning: A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:60: Warning: A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8 [GradleDependency]
     implementation("androidx.compose.material:material-icons-core:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:60: Warning: A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:61: Warning: A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8 [GradleDependency]
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:61: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:62: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
     implementation("androidx.core:core-ktx:1.13.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:63: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:64: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
     implementation("com.google.android.material:material:1.11.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:67: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1 [GradleDependency]
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:68: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1 [GradleDependency]
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/build.gradle.kts:69: Warning: A newer version of androidx.compose.runtime:runtime-saveable than 1.6.7 is available: 1.8.3 [GradleDependency]
+    implementation("androidx.compose.runtime:runtime-saveable:1.6.7")
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -106,18 +109,18 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:46: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var currentIndex by remember { mutableStateOf(prefs.getInt("last_index", 0)) }
-                                   ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:47: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var currentPage by remember { mutableStateOf(0) }
-                                  ~~~~~~~~~~~~~~
 /Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:48: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    var currentIndex by rememberSaveable { mutableStateOf(prefs.getInt("currentIndex", 0)) }
+                                           ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:50: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    val speed = rememberSaveable { mutableStateOf(1.0f) }
+                                   ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:51: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    var currentPage by rememberSaveable { mutableStateOf(0) }
+                                          ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:52: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
     var totalPages by remember { mutableStateOf(0) }
                                  ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:50: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var speed by remember { mutableStateOf(1.0f) }
-                            ~~~~~~~~~~~~~~
 
    Explanation for issues of type "AutoboxingStateCreation":
    Calling mutableStateOf<T>() when T is either backed by a primitive type on
@@ -202,14 +205,17 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
 /Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/PdfRendererHelper.kt:21: Warning: Use the KTX function createBitmap instead? [UseKtx]
             val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:58: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-            prefs.edit().putString("last_file", fileName).apply()
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:45: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+            prefs.getString("fileUri", null)?.let { Uri.parse(it) }
+                                                    ~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:64: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+            prefs.edit().putString("fileUri", it.toString()).putString("fileName", fileName).putInt("currentIndex", 0).apply()
             ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:99: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-                        prefs.edit().putInt("last_index", currentIndex).apply()
-                        ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:142: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-                                prefs.edit().putInt("last_index", index).apply()
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:135: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                    prefs.edit().putInt("currentIndex", currentIndex).apply()
+                    ~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:196: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                                prefs.edit().putInt("currentIndex", index).apply()
                                 ~~~~~~~~~~~~
 
    Explanation for issues of type "UseKtx":
@@ -268,4 +274,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    </lint>
    ```
 
-0 errors, 35 warnings, 4 hints
+0 errors, 37 warnings, 4 hints

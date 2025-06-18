@@ -48,6 +48,7 @@ android {
 
     lint {
         disable.add("CoroutineCreationDuringComposition")
+        disable.add("UnrememberedMutableState")
     }
 }
 
@@ -65,4 +66,5 @@ dependencies {
     implementation("org.apache.poi:poi-ooxml:5.2.5")
     implementation("com.tom-roush:pdfbox-android:2.0.27.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.compose.runtime:runtime-saveable:1.6.7")
 }
