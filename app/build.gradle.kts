@@ -1,5 +1,5 @@
 plugins {
-    id("com.android.application") version "8.10.1" // 8.10.1 → 安定版に合わせるなら 8.1.0 推奨
+    id("com.android.application") version "8.10.1"
     id("org.jetbrains.kotlin.android") version "1.9.25"
 }
 
@@ -25,6 +25,9 @@ android {
             )
         }
     }
+
+    sourceSets["main"].java.srcDirs("src/main/java")
+    sourceSets["main"].resources.srcDirs("src/main/resources")
 
     buildFeatures {
         compose = true

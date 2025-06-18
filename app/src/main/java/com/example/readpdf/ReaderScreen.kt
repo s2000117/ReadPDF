@@ -11,9 +11,11 @@ import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,13 +26,11 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.database.getStringOrNull
-import com.example.readpdf.PdfRendererHelper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.apache.poi.xwpf.usermodel.XWPFDocument
 import java.io.InputStream
-import java.util.*
 
 @Composable
 fun ReaderScreen(tts: TextToSpeech?) {
@@ -45,8 +45,9 @@ fun ReaderScreen(tts: TextToSpeech?) {
     var isPlaying by remember { mutableStateOf(false) }
     var speed by remember { mutableStateOf(1.0f) }
     var fileUri by remember { mutableStateOf<Uri?>(null) }
-    var speechQueue by remember { mutableStateOf(listOf<String>()) }
-    var currentSpeechIndex by remember { mutableStateOf(0) }
+    var paragraphs by remember { mutableStateOf<List<String>>(emptyList()) }
+    var currentIndex by remember { mutableStateOf(0) }
+    val listState = rememberLazyListState()
 
     val launcher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         uri?.let {
@@ -56,27 +57,33 @@ fun ReaderScreen(tts: TextToSpeech?) {
 
             when {
                 fileName.endsWith(".pdf", ignoreCase = true) -> {
+                    // Reset Word state
+                    paragraphs = emptyList()
+                    currentIndex = 0
+                    scope.launch {
+                        docText = PdfTextExtractor.extractTextFromPage(context, it, 0)
+                        paragraphs = docText.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
+                    }
                     val pageCount = PdfRendererHelper.getPageCount(context, it)
                     totalPages = pageCount
                     currentPage = 0
                     pageBitmap = PdfRendererHelper.renderPage(context, it, 0)
-                    scope.launch {
-                        docText = PdfTextExtractor.extractTextFromPage(context, it, 0)
-                    }
                 }
                 fileName.endsWith(".docx", ignoreCase = true) -> {
+                    // Reset PDF state
+                    pageBitmap = null
+                    totalPages = 1
+                    currentPage = 0
                     scope.launch {
-                        val fullText = extractDocxText(context.contentResolver.openInputStream(it))
-                        docText = fullText
-                        speechQueue = fullText.split("。", "。\n", "。\r\n", "\n", "\r").filter { line -> line.isNotBlank() }
-                        currentSpeechIndex = 0
-                        pageBitmap = null
-                        totalPages = 1
-                        currentPage = 0
+                        val text = extractDocxText(context.contentResolver.openInputStream(it))
+                        docText = text
+                        paragraphs = text.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
+                        currentIndex = 0
                     }
                 }
                 else -> {
                     docText = "未対応のファイル形式です"
+                    paragraphs = emptyList()
                     pageBitmap = null
                     totalPages = 1
                     currentPage = 0
@@ -90,16 +97,17 @@ fun ReaderScreen(tts: TextToSpeech?) {
             tts.setOnUtteranceProgressListener(object : UtteranceProgressListener() {
                 override fun onStart(utteranceId: String?) {}
                 override fun onDone(utteranceId: String?) {
-                    currentSpeechIndex++
-                    if (currentSpeechIndex < speechQueue.size) {
-                        val nextText = speechQueue[currentSpeechIndex]
-                        tts.speak(nextText, TextToSpeech.QUEUE_FLUSH, null, "utt_$currentSpeechIndex")
+                    if (currentIndex + 1 < paragraphs.size) {
+                        currentIndex++
+                        scope.launch {
+                            listState.animateScrollToItem(currentIndex)
+                        }
+                        tts.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
                     } else {
                         isPlaying = false
                     }
                 }
                 override fun onError(utteranceId: String?) {
-                    Log.e("TTS", "Error in utterance $utteranceId")
                     isPlaying = false
                 }
             })
@@ -109,7 +117,9 @@ fun ReaderScreen(tts: TextToSpeech?) {
 
     Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Button(onClick = { launcher.launch(arrayOf("application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document")) }) {
+            Button(onClick = {
+                launcher.launch(arrayOf("application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"))
+            }) {
                 Text("ファイルを選択")
             }
             Spacer(modifier = Modifier.width(16.dp))
@@ -117,15 +127,33 @@ fun ReaderScreen(tts: TextToSpeech?) {
         }
 
         Spacer(modifier = Modifier.height(4.dp))
-        if (isPlaying) Text("再生中: $fileName", color = Color.Green)
-        else Text("停止中", color = Color.Gray)
+        Text(if (isPlaying) "再生中: $fileName" else "停止中", color = if (isPlaying) Color.Green else Color.Gray)
 
         Spacer(modifier = Modifier.height(16.dp))
-        if (pageBitmap != null) {
-            Image(bitmap = pageBitmap!!.asImageBitmap(), contentDescription = null, modifier = Modifier.fillMaxWidth().height(400.dp))
-        } else if (docText.isNotBlank()) {
-            Column(modifier = Modifier.verticalScroll(rememberScrollState()).weight(1f)) {
-                Text(docText)
+
+        pageBitmap?.let {
+            Image(bitmap = it.asImageBitmap(), contentDescription = null, modifier = Modifier.fillMaxWidth().height(400.dp))
+        } ?: run {
+            if (paragraphs.isNotEmpty()) {
+                LaunchedEffect(currentIndex) {
+                    listState.animateScrollToItem(currentIndex)
+                }
+                LazyColumn(state = listState, modifier = Modifier.weight(1f)) {
+                    itemsIndexed(paragraphs) { index, paragraph ->
+                        Text(
+                            text = paragraph,
+                            color = if (index == currentIndex) Color.Red else Color.White,
+                            modifier = Modifier
+                                .padding(8.dp)
+                                .clickable {
+                                    currentIndex = index
+                                    tts?.stop()
+                                    tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
+                                    isPlaying = true
+                                }
+                        )
+                    }
+                }
             }
         }
 
@@ -133,16 +161,10 @@ fun ReaderScreen(tts: TextToSpeech?) {
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Button(onClick = {
-                if (!isPlaying) {
+                if (!isPlaying && paragraphs.isNotEmpty()) {
                     tts?.setSpeechRate(speed)
-                    if (speechQueue.isNotEmpty()) {
-                        tts?.speak(speechQueue[currentSpeechIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentSpeechIndex")
-                        isPlaying = true
-                    } else {
-                        val textToSpeak = docText.trim().ifBlank { "ページ${currentPage + 1}を表示中" }
-                        tts?.speak(textToSpeak, TextToSpeech.QUEUE_FLUSH, null, "utt_default")
-                        isPlaying = true
-                    }
+                    tts?.speak(paragraphs[currentIndex], TextToSpeech.QUEUE_FLUSH, null, "utt_$currentIndex")
+                    isPlaying = true
                 } else {
                     tts?.stop()
                     isPlaying = false
@@ -157,34 +179,32 @@ fun ReaderScreen(tts: TextToSpeech?) {
 
         Row(verticalAlignment = Alignment.CenterVertically) {
             Button(onClick = {
-                if (fileUri != null && fileName.endsWith(".pdf", true)) {
-                    if (currentPage > 0) {
-                        currentPage--
-                        pageBitmap = PdfRendererHelper.renderPage(context, fileUri!!, currentPage)
-                        scope.launch {
-                            docText = PdfTextExtractor.extractTextFromPage(context, fileUri!!, currentPage)
-                        }
+                if (fileUri != null && fileName.endsWith(".pdf", true) && currentPage > 0) {
+                    currentPage--
+                    pageBitmap = PdfRendererHelper.renderPage(context, fileUri!!, currentPage)
+                    scope.launch {
+                        docText = PdfTextExtractor.extractTextFromPage(context, fileUri!!, currentPage)
+                        paragraphs = docText.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
+                        currentIndex = 0
                     }
                 }
-            }) {
-                Text("前のページ")
-            }
+            }) { Text("前のページ") }
+
             Spacer(modifier = Modifier.width(8.dp))
             Text("${currentPage + 1} / ${totalPages}")
             Spacer(modifier = Modifier.width(8.dp))
+
             Button(onClick = {
-                if (fileUri != null && fileName.endsWith(".pdf", true)) {
-                    if (currentPage < totalPages - 1) {
-                        currentPage++
-                        pageBitmap = PdfRendererHelper.renderPage(context, fileUri!!, currentPage)
-                        scope.launch {
-                            docText = PdfTextExtractor.extractTextFromPage(context, fileUri!!, currentPage)
-                        }
+                if (fileUri != null && fileName.endsWith(".pdf", true) && currentPage < totalPages - 1) {
+                    currentPage++
+                    pageBitmap = PdfRendererHelper.renderPage(context, fileUri!!, currentPage)
+                    scope.launch {
+                        docText = PdfTextExtractor.extractTextFromPage(context, fileUri!!, currentPage)
+                        paragraphs = docText.split(Regex("(?<=[。．？！])\\s*|\\n+")).filter { it.isNotBlank() }
+                        currentIndex = 0
                     }
                 }
-            }) {
-                Text("次のページ")
-            }
+            }) { Text("次のページ") }
         }
     }
 }

@@ -14,10 +14,10 @@
             file="${:app*projectDir}/build.gradle.kts"
             line="13"
             column="9"
-            startOffset="315"
+            startOffset="283"
             endLine="13"
             endColumn="23"
-            endOffset="329"/>
+            endOffset="297"/>
     </incident>
 
     <incident
@@ -53,10 +53,10 @@
             file="${:app*projectDir}/build.gradle.kts"
             line="3"
             column="48"
-            startOffset="140"
+            startOffset="108"
             endLine="3"
             endColumn="56"
-            endOffset="148"/>
+            endOffset="116"/>
     </incident>
 
     <incident
@@ -72,10 +72,10 @@
             file="${:app*projectDir}/build.gradle.kts"
             line="8"
             column="5"
-            startOffset="204"
+            startOffset="172"
             endLine="8"
             endColumn="20"
-            endOffset="219"/>
+            endOffset="187"/>
     </incident>
 
     <incident
@@ -90,12 +90,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="52"
+            line="55"
             column="20"
-            startOffset="1085"
-            endLine="52"
+            startOffset="1170"
+            endLine="55"
             endColumn="62"
-            endOffset="1127"/>
+            endOffset="1212"/>
     </incident>
 
     <incident
@@ -110,12 +110,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="53"
+            line="56"
             column="20"
-            startOffset="1148"
-            endLine="53"
+            startOffset="1233"
+            endLine="56"
             endColumn="64"
-            endOffset="1192"/>
+            endOffset="1277"/>
     </incident>
 
     <incident
@@ -130,12 +130,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="54"
+            line="57"
             column="20"
-            startOffset="1213"
-            endLine="54"
+            startOffset="1298"
+            endLine="57"
             endColumn="50"
-            endOffset="1243"/>
+            endOffset="1328"/>
     </incident>
 
     <incident
@@ -150,12 +150,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="55"
+            line="58"
             column="20"
-            startOffset="1264"
-            endLine="55"
+            startOffset="1349"
+            endLine="58"
             endColumn="66"
-            endOffset="1310"/>
+            endOffset="1395"/>
     </incident>
 
     <incident
@@ -170,12 +170,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="56"
+            line="59"
             column="20"
-            startOffset="1331"
-            endLine="56"
+            startOffset="1416"
+            endLine="59"
             endColumn="73"
-            endOffset="1384"/>
+            endOffset="1469"/>
     </incident>
 
     <incident
@@ -190,12 +190,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="57"
+            line="60"
             column="20"
-            startOffset="1405"
-            endLine="57"
+            startOffset="1490"
+            endLine="60"
             endColumn="77"
-            endOffset="1462"/>
+            endOffset="1547"/>
     </incident>
 
     <incident
@@ -210,12 +210,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="58"
+            line="61"
             column="20"
-            startOffset="1483"
-            endLine="58"
+            startOffset="1568"
+            endLine="61"
             endColumn="51"
-            endOffset="1514"/>
+            endOffset="1599"/>
     </incident>
 
     <incident
@@ -230,12 +230,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="60"
+            line="63"
             column="20"
-            startOffset="1590"
-            endLine="60"
+            startOffset="1675"
+            endLine="63"
             endColumn="65"
-            endOffset="1635"/>
+            endOffset="1720"/>
     </incident>
 
     <incident
@@ -250,12 +250,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="64"
+            line="67"
             column="20"
-            startOffset="1814"
-            endLine="64"
+            startOffset="1899"
+            endLine="67"
             endColumn="68"
-            endOffset="1862"/>
+            endOffset="1947"/>
     </incident>
 
     <incident
@@ -324,17 +324,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1513"
-                endOffset="1527"/>
+                startOffset="1555"
+                endOffset="1569"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="41"
             column="35"
-            startOffset="1513"
+            startOffset="1555"
             endLine="41"
             endColumn="49"
-            endOffset="1527"/>
+            endOffset="1569"/>
     </incident>
 
     <incident
@@ -348,17 +348,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1566"
-                endOffset="1580"/>
+                startOffset="1608"
+                endOffset="1622"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="42"
             column="34"
-            startOffset="1566"
+            startOffset="1608"
             endLine="42"
             endColumn="48"
-            endOffset="1580"/>
+            endOffset="1622"/>
     </incident>
 
     <incident
@@ -372,17 +372,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1786"
-                endOffset="1800"/>
+                startOffset="1828"
+                endOffset="1842"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="46"
             column="29"
-            startOffset="1786"
+            startOffset="1828"
             endLine="46"
             endColumn="43"
-            endOffset="1800"/>
+            endOffset="1842"/>
     </incident>
 
     <incident
@@ -396,17 +396,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1978"
-                endOffset="1992"/>
+                startOffset="2022"
+                endOffset="2036"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="49"
-            column="42"
-            startOffset="1978"
+            column="36"
+            startOffset="2022"
             endLine="49"
-            endColumn="56"
-            endOffset="1992"/>
+            endColumn="50"
+            endOffset="2036"/>
     </incident>
 
     <incident
