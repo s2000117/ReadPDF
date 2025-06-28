@@ -62,26 +62,6 @@
     <incident
         id="GradleDependency"
         severity="warning"
-        message="A newer version of org.jetbrains.kotlin.android than 1.9.25 is available: 2.0.21">
-        <fix-replace
-            description="Change to 2.0.21"
-            family="Update versions"
-            oldString="1.9.25"
-            replacement="2.0.21"
-            priority="0"/>
-        <location
-            file="${:app*projectDir}/build.gradle.kts"
-            line="3"
-            column="48"
-            startOffset="108"
-            endLine="3"
-            endColumn="56"
-            endOffset="116"/>
-    </incident>
-
-    <incident
-        id="GradleDependency"
-        severity="warning"
         message="A newer version of `compileSdkVersion` than 34 is available: 35">
         <fix-replace
             description="Set compileSdkVersion to 35"
@@ -364,17 +344,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1940"
-                endOffset="1954"/>
+                startOffset="1929"
+                endOffset="1943"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="46"
             column="44"
-            startOffset="1940"
+            startOffset="1929"
             endLine="46"
             endColumn="58"
-            endOffset="1954"/>
+            endOffset="1943"/>
     </incident>
 
     <incident
@@ -388,17 +368,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="2088"
-                endOffset="2102"/>
+                startOffset="2079"
+                endOffset="2093"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="48"
-            column="36"
-            startOffset="2088"
+            column="37"
+            startOffset="2079"
             endLine="48"
-            endColumn="50"
-            endOffset="2102"/>
+            endColumn="51"
+            endOffset="2093"/>
     </incident>
 
     <incident
@@ -412,17 +392,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="2153"
-                endOffset="2167"/>
+                startOffset="2144"
+                endOffset="2158"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="49"
             column="43"
-            startOffset="2153"
+            startOffset="2144"
             endLine="49"
             endColumn="57"
-            endOffset="2167"/>
+            endOffset="2158"/>
     </incident>
 
     <incident
@@ -436,17 +416,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="2206"
-                endOffset="2220"/>
+                startOffset="2197"
+                endOffset="2211"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="50"
             column="34"
-            startOffset="2206"
+            startOffset="2197"
             endLine="50"
             endColumn="48"
-            endOffset="2220"/>
+            endOffset="2211"/>
     </incident>
 
     <incident
@@ -526,17 +506,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1878"
-                endOffset="1891"/>
+                startOffset="1867"
+                endOffset="1880"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
             line="45"
             column="94"
-            startOffset="1878"
+            startOffset="1867"
             endLine="45"
             endColumn="107"
-            endOffset="1891"/>
+            endOffset="1880"/>
     </incident>
 
     <incident
@@ -559,8 +539,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2931"
-                    endOffset="2936"/>
+                    startOffset="2758"
+                    endOffset="2763"/>
             </fix-replace>
             <fix-replace
                 description="Replace with  {"
@@ -571,8 +551,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2936"
-                    endOffset="2937"/>
+                    startOffset="2763"
+                    endOffset="2764"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -583,8 +563,8 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2937"
-                    endOffset="2938"/>
+                    startOffset="2764"
+                    endOffset="2765"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -595,228 +575,158 @@
                 priority="0">
                 <range
                     file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="3031"
-                    endOffset="3039"/>
+                    startOffset="2858"
+                    endOffset="2866"/>
             </fix-replace>
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="69"
-            column="13"
-            startOffset="2925"
-            endLine="69"
-            endColumn="25"
-            endOffset="2937"/>
-    </incident>
-
-    <incident
-        id="UseKtx"
-        severity="warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?">
-        <fix-composite
-            description="Replace with the edit extension function"
-            family="Replace with the edit extension function"
-            robot="true"
-            independent="true">
-            <fix-replace
-                description="Replace with edit"
-                robot="true"
-                independent="true"
-                oldString="edit("
-                replacement="edit"
-                reformat="value"
-                imports="androidx.core.content.edit"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="6200"
-                    endOffset="6205"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with  {"
-                robot="true"
-                independent="true"
-                oldString=")"
-                replacement=" {"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="6205"
-                    endOffset="6206"/>
-            </fix-replace>
-            <fix-replace
-                description="Delete &quot;.&quot;"
-                robot="true"
-                independent="true"
-                oldString="."
-                replacement=""
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="6206"
-                    endOffset="6207"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with }"
-                robot="true"
-                independent="true"
-                oldString=".apply()"
-                replacement="}"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="6243"
-                    endOffset="6251"/>
-            </fix-replace>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="141"
-            column="21"
-            startOffset="6194"
-            endLine="141"
-            endColumn="33"
-            endOffset="6206"/>
-    </incident>
-
-    <incident
-        id="UseKtx"
-        severity="warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?">
-        <fix-composite
-            description="Replace with the edit extension function"
-            family="Replace with the edit extension function"
-            robot="true"
-            independent="true">
-            <fix-replace
-                description="Replace with edit"
-                robot="true"
-                independent="true"
-                oldString="edit("
-                replacement="edit"
-                reformat="value"
-                imports="androidx.core.content.edit"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8019"
-                    endOffset="8024"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with  {"
-                robot="true"
-                independent="true"
-                oldString=")"
-                replacement=" {"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8024"
-                    endOffset="8025"/>
-            </fix-replace>
-            <fix-replace
-                description="Delete &quot;.&quot;"
-                robot="true"
-                independent="true"
-                oldString="."
-                replacement=""
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8025"
-                    endOffset="8026"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with }"
-                robot="true"
-                independent="true"
-                oldString=".apply()"
-                replacement="}"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8055"
-                    endOffset="8063"/>
-            </fix-replace>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="179"
-            column="25"
-            startOffset="8013"
-            endLine="179"
-            endColumn="37"
-            endOffset="8025"/>
-    </incident>
-
-    <incident
-        id="UseKtx"
-        severity="warning"
-        message="Use the KTX extension function `SharedPreferences.edit` instead?">
-        <fix-composite
-            description="Replace with the edit extension function"
-            family="Replace with the edit extension function"
-            robot="true"
-            independent="true">
-            <fix-replace
-                description="Replace with edit"
-                robot="true"
-                independent="true"
-                oldString="edit("
-                replacement="edit"
-                reformat="value"
-                imports="androidx.core.content.edit"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="9374"
-                    endOffset="9379"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with  {"
-                robot="true"
-                independent="true"
-                oldString=")"
-                replacement=" {"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="9379"
-                    endOffset="9380"/>
-            </fix-replace>
-            <fix-replace
-                description="Delete &quot;.&quot;"
-                robot="true"
-                independent="true"
-                oldString="."
-                replacement=""
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="9380"
-                    endOffset="9381"/>
-            </fix-replace>
-            <fix-replace
-                description="Replace with }"
-                robot="true"
-                independent="true"
-                oldString=".apply()"
-                replacement="}"
-                priority="0">
-                <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="9388"
-                    endOffset="9396"/>
-            </fix-replace>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="215"
+            line="61"
             column="17"
-            startOffset="9368"
-            endLine="215"
+            startOffset="2752"
+            endLine="61"
             endColumn="29"
-            endOffset="9380"/>
+            endOffset="2764"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit("
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="5391"
+                    endOffset="5396"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with  {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=" {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="5396"
+                    endOffset="5397"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="5397"
+                    endOffset="5398"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="5434"
+                    endOffset="5442"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="112"
+            column="21"
+            startOffset="5385"
+            endLine="112"
+            endColumn="33"
+            endOffset="5397"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit("
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="7259"
+                    endOffset="7264"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with  {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=" {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="7264"
+                    endOffset="7265"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="7265"
+                    endOffset="7266"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+                    startOffset="7293"
+                    endOffset="7301"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
+            line="149"
+            column="21"
+            startOffset="7253"
+            endLine="149"
+            endColumn="33"
+            endOffset="7265"/>
     </incident>
 
 </incidents>
