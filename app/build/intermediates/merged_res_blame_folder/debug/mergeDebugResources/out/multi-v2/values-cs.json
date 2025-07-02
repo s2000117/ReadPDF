@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeDebugResources-52:/values-cs/values-cs.xml",
+            "outputFile": "com.example.readocx.app-mergeDebugResources-52:/values-cs/values-cs.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/e82277c6ce49755e54540fbec1e7d2a9/transformed/jetified-ui-release/res/values-cs/values-cs.xml",

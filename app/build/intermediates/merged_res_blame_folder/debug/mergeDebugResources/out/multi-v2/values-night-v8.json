@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeDebugResources-52:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.readocx.app-mergeDebugResources-52:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/f19a7e5d663a2245f03ca8baed726ac9/transformed/material-1.11.0/res/values-night-v8/values-night-v8.xml",

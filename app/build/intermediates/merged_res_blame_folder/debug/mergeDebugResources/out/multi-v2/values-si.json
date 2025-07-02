@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeDebugResources-52:/values-si/values-si.xml",
+            "outputFile": "com.example.readocx.app-mergeDebugResources-52:/values-si/values-si.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/e3ed8e8de5a70d24b17e7dbff6131935/transformed/jetified-material3-release/res/values-si/values-si.xml",

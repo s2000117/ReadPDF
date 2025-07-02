@@ -6,8 +6,14 @@
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
     <color name="white">#FFFFFF</color>
-    <string name="app_name">ReadPDF</string>
-    <style name="Theme.ReadAloudPDFOnlyFixed" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <string name="app_name">Readocx</string>
+    <style name="Theme.Readocx" parent="Theme.Material3.DayNight">
+        
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimary</item>
+    </style>
+    <style name="Theme.readocx" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -18,11 +24,5 @@
 
         <item name="android:statusBarColor" ns1:targetApi="l">@color/purple_700</item>
         <item name="android:navigationBarColor">@color/black</item>
-    </style>
-    <style name="Theme.ReadPDF" parent="Theme.Material3.DayNight">
-        
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor" ns1:targetApi="l">?attr/colorPrimary</item>
     </style>
 </resources>

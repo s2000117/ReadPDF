@@ -1,9 +1,9 @@
 <lint-module
     format="1"
-    dir="/Users/medailab/projects/ReadPDF/app"
+    dir="/Users/medailab/projects/Readocx/app"
     name=":app"
     type="APP"
-    maven="ReadPDF:app:unspecified"
+    maven="Readocx:app:unspecified"
     agpVersion="8.10.1"
     buildFolder="build"
     bootClassPath="/Users/medailab/Library/Android/sdk/platforms/android-34/android.jar:/Users/medailab/Library/Android/sdk/build-tools/35.0.0/core-lambda-stubs.jar"

@@ -16,6 +16,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ReadPDF"
+rootProject.name = "Readocx"
 
 include(":app")

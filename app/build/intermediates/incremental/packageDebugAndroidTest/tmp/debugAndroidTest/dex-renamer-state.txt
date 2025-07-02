@@ -1,4 +1,0 @@
-#Wed Jul 02 14:40:09 JST 2025
-base.0=/Users/medailab/projects/ReadPDF/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
-path.0=0/classes.dex
-renamed.0=classes.dex

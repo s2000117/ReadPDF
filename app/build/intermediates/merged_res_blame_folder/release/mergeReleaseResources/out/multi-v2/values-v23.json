@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeReleaseResources-52:/values-v23/values-v23.xml",
+            "outputFile": "com.example.readocx.app-mergeReleaseResources-52:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/405f60d4e5e85ccec41e4b5a22ae9b4c/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",

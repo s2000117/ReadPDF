@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.readpdf"
+    namespace = "com.example.readocx"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.readpdf"
+        applicationId = "com.example.readocx"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -64,7 +64,6 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("org.jsoup:jsoup:1.17.2")
     implementation("org.apache.poi:poi-ooxml:5.2.5")
-    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.compose.runtime:runtime-saveable:1.6.7")
 }

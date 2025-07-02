@@ -11,17 +11,17 @@
             priority="0">
             <range
                 file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
-                startOffset="610"
-                endOffset="629"/>
+                startOffset="596"
+                endOffset="615"/>
         </fix-replace>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
             line="12"
             column="45"
-            startOffset="610"
+            startOffset="596"
             endLine="12"
             endColumn="64"
-            endOffset="629"/>
+            endOffset="615"/>
         <map>
             <condition minGE="21-∞"/>
         </map>

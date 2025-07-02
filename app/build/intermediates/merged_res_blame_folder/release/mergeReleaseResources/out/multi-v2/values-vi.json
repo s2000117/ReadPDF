@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeReleaseResources-52:/values-vi/values-vi.xml",
+            "outputFile": "com.example.readocx.app-mergeReleaseResources-52:/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/b7261791a88e4b7c64540ac975db9db9/transformed/appcompat-1.6.1/res/values-vi/values-vi.xml",

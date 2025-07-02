@@ -1,6 +1,6 @@
 <variant
     name="debug"
-    package="com.example.readpdf"
+    package="com.example.readocx"
     minSdkVersion="26"
     targetSdkVersion="34"
     debuggable="true"

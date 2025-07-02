@@ -50,7 +50,7 @@
             replacement="8.14.2"
             priority="0"/>
         <location
-            file="$HOME/projects/ReadPDF/gradle/wrapper/gradle-wrapper.properties"
+            file="$HOME/projects/Readocx/gradle/wrapper/gradle-wrapper.properties"
             line="3"
             column="17"
             startOffset="81"
@@ -250,12 +250,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="68"
+            line="67"
             column="20"
-            startOffset="1947"
-            endLine="68"
+            startOffset="1887"
+            endLine="67"
             endColumn="68"
-            endOffset="1995"/>
+            endOffset="1935"/>
     </incident>
 
     <incident
@@ -270,36 +270,12 @@
             priority="0"/>
         <location
             file="${:app*projectDir}/build.gradle.kts"
-            line="69"
+            line="68"
             column="20"
-            startOffset="2016"
-            endLine="69"
+            startOffset="1956"
+            endLine="68"
             endColumn="69"
-            endOffset="2065"/>
-    </incident>
-
-    <incident
-        id="TrustAllX509TrustManager"
-        severity="warning"
-        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
-        <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
-    </incident>
-
-    <incident
-        id="TrustAllX509TrustManager"
-        severity="warning"
-        message="`checkClientTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
-        <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
-    </incident>
-
-    <incident
-        id="TrustAllX509TrustManager"
-        severity="warning"
-        message="`checkServerTrusted` is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers">
-        <location
-            file="$GRADLE_USER_HOME/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"/>
+            endOffset="2005"/>
     </incident>
 
     <incident
@@ -324,7 +300,7 @@
         message="Unnecessary; `SDK_INT` is always >= 26">
         <fix-data conditional="true"/>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReadAloudService.kt"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReadAloudService.kt"
             line="88"
             column="13"
             startOffset="2706"
@@ -343,18 +319,18 @@
             shortenNames="true"
             priority="0">
             <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1879"
-                endOffset="1893"/>
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                startOffset="1757"
+                endOffset="1771"/>
         </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="46"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="43"
             column="44"
-            startOffset="1879"
-            endLine="46"
+            startOffset="1757"
+            endLine="43"
             endColumn="58"
-            endOffset="1893"/>
+            endOffset="1771"/>
     </incident>
 
     <incident
@@ -367,18 +343,18 @@
             shortenNames="true"
             priority="0">
             <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="2264"
-                endOffset="2278"/>
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                startOffset="1905"
+                endOffset="1919"/>
         </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="52"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="45"
             column="36"
-            startOffset="2264"
-            endLine="52"
+            startOffset="1905"
+            endLine="45"
             endColumn="50"
-            endOffset="2278"/>
+            endOffset="1919"/>
     </incident>
 
     <incident
@@ -391,18 +367,18 @@
             shortenNames="true"
             priority="0">
             <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="7195"
-                endOffset="7209"/>
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                startOffset="6473"
+                endOffset="6487"/>
         </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="161"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="158"
             column="46"
-            startOffset="7195"
-            endLine="161"
+            startOffset="6473"
+            endLine="158"
             endColumn="60"
-            endOffset="7209"/>
+            endOffset="6487"/>
     </incident>
 
     <incident
@@ -440,35 +416,6 @@
     <incident
         id="UseKtx"
         severity="warning"
-        message="Use the KTX function `createBitmap` instead?">
-        <fix-replace
-            description="Replace with the createBitmap function"
-            family="Replace with the createBitmap function"
-            robot="true"
-            independent="true"
-            oldString="Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)"
-            replacement="createBitmap(page.width, page.height)"
-            reformat="value"
-            imports="androidx.core.graphics.createBitmap"
-            priority="0">
-            <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/PdfRendererHelper.kt"
-                startOffset="706"
-                endOffset="775"/>
-        </fix-replace>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/PdfRendererHelper.kt"
-            line="21"
-            column="26"
-            startOffset="706"
-            endLine="21"
-            endColumn="95"
-            endOffset="775"/>
-    </incident>
-
-    <incident
-        id="UseKtx"
-        severity="warning"
         message="Use the KTX extension function `String.toUri` instead?">
         <fix-replace
             description="Replace with the toUri extension function"
@@ -481,18 +428,18 @@
             imports="androidx.core.net.toUri"
             priority="0">
             <range
-                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                startOffset="1813"
-                endOffset="1826"/>
+                file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                startOffset="1691"
+                endOffset="1704"/>
         </fix-replace>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="44"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="41"
             column="64"
-            startOffset="1813"
-            endLine="44"
+            startOffset="1691"
+            endLine="41"
             endColumn="77"
-            endOffset="1826"/>
+            endOffset="1704"/>
     </incident>
 
     <incident
@@ -514,9 +461,9 @@
                 imports="androidx.core.content.edit"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2637"
-                    endOffset="2642"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="2481"
+                    endOffset="2486"/>
             </fix-replace>
             <fix-replace
                 description="Replace with  {"
@@ -526,9 +473,9 @@
                 replacement=" {"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2642"
-                    endOffset="2643"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="2486"
+                    endOffset="2487"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -538,9 +485,9 @@
                 replacement=""
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2643"
-                    endOffset="2644"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="2487"
+                    endOffset="2488"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -550,19 +497,19 @@
                 replacement="}"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="2737"
-                    endOffset="2745"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="2581"
+                    endOffset="2589"/>
             </fix-replace>
         </fix-composite>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="60"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="57"
             column="13"
-            startOffset="2631"
-            endLine="60"
+            startOffset="2475"
+            endLine="57"
             endColumn="25"
-            endOffset="2643"/>
+            endOffset="2487"/>
     </incident>
 
     <incident
@@ -584,9 +531,9 @@
                 imports="androidx.core.content.edit"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="4860"
-                    endOffset="4865"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="3749"
+                    endOffset="3754"/>
             </fix-replace>
             <fix-replace
                 description="Replace with  {"
@@ -596,9 +543,9 @@
                 replacement=" {"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="4865"
-                    endOffset="4866"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="3754"
+                    endOffset="3755"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -608,9 +555,9 @@
                 replacement=""
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="4866"
-                    endOffset="4867"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="3755"
+                    endOffset="3756"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -620,19 +567,19 @@
                 replacement="}"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="4903"
-                    endOffset="4911"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="3792"
+                    endOffset="3800"/>
             </fix-replace>
         </fix-composite>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="105"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="86"
             column="21"
-            startOffset="4854"
-            endLine="105"
+            startOffset="3743"
+            endLine="86"
             endColumn="33"
-            endOffset="4866"/>
+            endOffset="3755"/>
     </incident>
 
     <incident
@@ -654,9 +601,9 @@
                 imports="androidx.core.content.edit"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="7514"
-                    endOffset="7519"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="5303"
+                    endOffset="5308"/>
             </fix-replace>
             <fix-replace
                 description="Replace with  {"
@@ -666,9 +613,9 @@
                 replacement=" {"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="7519"
-                    endOffset="7520"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="5308"
+                    endOffset="5309"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -678,9 +625,9 @@
                 replacement=""
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="7520"
-                    endOffset="7521"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="5309"
+                    endOffset="5310"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -690,19 +637,89 @@
                 replacement="}"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="7557"
-                    endOffset="7565"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="5336"
+                    endOffset="5344"/>
             </fix-replace>
         </fix-composite>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="168"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="126"
+            column="17"
+            startOffset="5297"
+            endLine="126"
+            endColumn="29"
+            endOffset="5309"/>
+    </incident>
+
+    <incident
+        id="UseKtx"
+        severity="warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?">
+        <fix-composite
+            description="Replace with the edit extension function"
+            family="Replace with the edit extension function"
+            robot="true"
+            independent="true">
+            <fix-replace
+                description="Replace with edit"
+                robot="true"
+                independent="true"
+                oldString="edit("
+                replacement="edit"
+                reformat="value"
+                imports="androidx.core.content.edit"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="6792"
+                    endOffset="6797"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with  {"
+                robot="true"
+                independent="true"
+                oldString=")"
+                replacement=" {"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="6797"
+                    endOffset="6798"/>
+            </fix-replace>
+            <fix-replace
+                description="Delete &quot;.&quot;"
+                robot="true"
+                independent="true"
+                oldString="."
+                replacement=""
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="6798"
+                    endOffset="6799"/>
+            </fix-replace>
+            <fix-replace
+                description="Replace with }"
+                robot="true"
+                independent="true"
+                oldString=".apply()"
+                replacement="}"
+                priority="0">
+                <range
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="6835"
+                    endOffset="6843"/>
+            </fix-replace>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="165"
             column="21"
-            startOffset="7508"
-            endLine="168"
+            startOffset="6786"
+            endLine="165"
             endColumn="33"
-            endOffset="7520"/>
+            endOffset="6798"/>
     </incident>
 
     <incident
@@ -724,9 +741,9 @@
                 imports="androidx.core.content.edit"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8404"
-                    endOffset="8409"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="7682"
+                    endOffset="7687"/>
             </fix-replace>
             <fix-replace
                 description="Replace with  {"
@@ -736,9 +753,9 @@
                 replacement=" {"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8409"
-                    endOffset="8410"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="7687"
+                    endOffset="7688"/>
             </fix-replace>
             <fix-replace
                 description="Delete &quot;.&quot;"
@@ -748,9 +765,9 @@
                 replacement=""
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8410"
-                    endOffset="8411"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="7688"
+                    endOffset="7689"/>
             </fix-replace>
             <fix-replace
                 description="Replace with }"
@@ -760,19 +777,19 @@
                 replacement="}"
                 priority="0">
                 <range
-                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-                    startOffset="8440"
-                    endOffset="8448"/>
+                    file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+                    startOffset="7718"
+                    endOffset="7726"/>
             </fix-replace>
         </fix-composite>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/readpdf/ReaderScreen.kt"
-            line="184"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/Readocx/ReaderScreen.kt"
+            line="181"
             column="29"
-            startOffset="8398"
-            endLine="184"
+            startOffset="7676"
+            endLine="181"
             endColumn="41"
-            endOffset="8410"/>
+            endOffset="7688"/>
     </incident>
 
 </incidents>

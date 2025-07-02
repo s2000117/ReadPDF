@@ -1385,58 +1385,6 @@ library {
     value: 1
   }
 }
-library {
-  maven_library {
-    groupId: "com.tom-roush"
-    artifactId: "pdfbox-android"
-    version: "2.0.27.0"
-  }
-  digests {
-    sha256: "0\'\177\207\234\375W\035\262\2417X,\225Qj\rN\246w\216\224U\031\274X\312\223\325}\210\307"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
-    groupId: "org.bouncycastle"
-    artifactId: "bcprov-jdk15to18"
-    version: "1.72"
-  }
-  digests {
-    sha256: "\352f\352\212E\b\020\262\031>\213\371\247\255>F0|\230\226\"L\017@}\033}\226\272\022!\314"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
-    groupId: "org.bouncycastle"
-    artifactId: "bcpkix-jdk15to18"
-    version: "1.72"
-  }
-  digests {
-    sha256: "\331\271tw\267$\231\274\356\002\365\251\006Q\b\020%\177\363j\224\277i\373\312\v\036e\347\377\333n"
-  }
-  repo_index {
-    value: 1
-  }
-}
-library {
-  maven_library {
-    groupId: "org.bouncycastle"
-    artifactId: "bcutil-jdk15to18"
-    version: "1.72"
-  }
-  digests {
-    sha256: "\331!\204\275\3531\005\241\032\331\343j\313\326k_\216\355\t\033\b\271\310\363\342T\236B\267\3611\361"
-  }
-  repo_index {
-    value: 1
-  }
-}
 library_dependencies {
   library_dep_index: 1
   library_dep_index: 2
@@ -2304,21 +2252,6 @@ library_dependencies {
   library_index: 116
   library_dep_index: 114
 }
-library_dependencies {
-  library_index: 119
-  library_dep_index: 120
-  library_dep_index: 121
-  library_dep_index: 122
-}
-library_dependencies {
-  library_index: 121
-  library_dep_index: 120
-  library_dep_index: 122
-}
-library_dependencies {
-  library_index: 122
-  library_dep_index: 120
-}
 module_dependencies {
   module_name: "base"
   dependency_index: 0
@@ -2333,7 +2266,6 @@ module_dependencies {
   dependency_index: 80
   dependency_index: 106
   dependency_index: 107
-  dependency_index: 119
   dependency_index: 27
   dependency_index: 43
 }

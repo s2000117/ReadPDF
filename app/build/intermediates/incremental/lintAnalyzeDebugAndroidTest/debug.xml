@@ -1,6 +1,6 @@
 <variant
     name="debug"
-    package="com.example.readpdf"
+    package="com.example.readocx"
     minSdkVersion="26"
     targetSdkVersion="34"
     debuggable="true"
@@ -23,7 +23,7 @@
   </testFixturesSourceProviders>
   <artifact
       type="INSTRUMENTATION_TEST"
-      applicationId="com.example.readpdf.test"
+      applicationId="com.example.readocx.test"
       generatedResourceFolders="build/generated/res/resValues/androidTest/debug"
       desugaredMethodsFiles="/Users/medailab/.gradle/caches/8.14.1/transforms/9ee5d86b1e8e8847942b1407ade786f1/transformed/D8BackportedDesugaredMethods.txt">
   </artifact>

@@ -1,6 +1,6 @@
 <variant
     name="release"
-    package="com.example.readpdf"
+    package="com.example.readocx"
     minSdkVersion="26"
     targetSdkVersion="34"
     mergedManifest="build/intermediates/merged_manifest/release/processReleaseMainManifest/AndroidManifest.xml"
@@ -23,7 +23,7 @@
   <artifact
       classOutputs="build/intermediates/javac/release/compileReleaseJavaWithJavac/classes:build/tmp/kotlin-classes/release:build/kotlinToolingMetadata:build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/processReleaseResources/R.jar"
       type="MAIN"
-      applicationId="com.example.readpdf"
+      applicationId="com.example.readocx"
       generatedSourceFolders="build/generated/ap_generated_sources/release/out"
       generatedResourceFolders="build/generated/res/resValues/release"
       desugaredMethodsFiles="/Users/medailab/.gradle/caches/8.14.1/transforms/9ee5d86b1e8e8847942b1407ade786f1/transformed/D8BackportedDesugaredMethods.txt">

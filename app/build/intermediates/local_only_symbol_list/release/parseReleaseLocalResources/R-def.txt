@@ -9,5 +9,5 @@ color white
 mipmap ic_launche
 mipmap ic_launcher
 string app_name
-style Theme.ReadAloudPDFOnlyFixed
-style Theme.ReadPDF
+style Theme.Readocx
+style Theme.readocx

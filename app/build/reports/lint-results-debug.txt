@@ -1,4 +1,4 @@
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:13: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
         targetSdk = 34
         ~~~~~~~~~~~~~~
 
@@ -21,10 +21,10 @@
 
    https://developer.android.com/distribute/best-practices/develop/target-sdk.html
 
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:2: Warning: A newer version of com.android.application than 8.10.1 is available: 8.11.0 [AndroidGradlePluginVersion]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:2: Warning: A newer version of com.android.application than 8.10.1 is available: 8.11.0 [AndroidGradlePluginVersion]
     id("com.android.application") version "8.10.1"
                                           ~~~~~~~~
-/Users/medailab/projects/ReadPDF/gradle/wrapper/gradle-wrapper.properties:3: Warning: A newer version of Gradle than 8.14.1 is available: 8.14.2 [AndroidGradlePluginVersion]
+/Users/medailab/projects/Readocx/gradle/wrapper/gradle-wrapper.properties:3: Warning: A newer version of Gradle than 8.14.1 is available: 8.14.2 [AndroidGradlePluginVersion]
 distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -35,37 +35,37 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    with an older version. However, you may simply not be aware that a more
    recent version is available, and that is what this lint check helps find.
 
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 35 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:8: Warning: A newer version of compileSdkVersion than 34 is available: 35 [GradleDependency]
     compileSdk = 34
     ~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:56: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:56: Warning: A newer version of androidx.activity:activity-compose than 1.9.0 is available: 1.10.1 [GradleDependency]
     implementation("androidx.activity:activity-compose:1.9.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:57: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:57: Warning: A newer version of androidx.compose.material3:material3 than 1.2.1 is available: 1.3.2 [GradleDependency]
     implementation("androidx.compose.material3:material3:1.2.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:58: Warning: A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.3 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:58: Warning: A newer version of androidx.compose.ui:ui than 1.6.7 is available: 1.8.3 [GradleDependency]
     implementation("androidx.compose.ui:ui:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:59: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.3 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:59: Warning: A newer version of androidx.compose.ui:ui-tooling-preview than 1.6.7 is available: 1.8.3 [GradleDependency]
     implementation("androidx.compose.ui:ui-tooling-preview:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:60: Warning: A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:60: Warning: A newer version of androidx.compose.material:material-icons-core than 1.6.7 is available: 1.7.8 [GradleDependency]
     implementation("androidx.compose.material:material-icons-core:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:61: Warning: A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:61: Warning: A newer version of androidx.compose.material:material-icons-extended than 1.6.7 is available: 1.7.8 [GradleDependency]
     implementation("androidx.compose.material:material-icons-extended:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:62: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:62: Warning: A newer version of androidx.core:core-ktx than 1.13.1 is available: 1.16.0 [GradleDependency]
     implementation("androidx.core:core-ktx:1.13.1")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:64: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:64: Warning: A newer version of com.google.android.material:material than 1.11.0 is available: 1.12.0 [GradleDependency]
     implementation("com.google.android.material:material:1.11.0")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:68: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:67: Warning: A newer version of androidx.lifecycle:lifecycle-runtime-ktx than 2.6.2 is available: 2.9.1 [GradleDependency]
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/build.gradle.kts:69: Warning: A newer version of androidx.compose.runtime:runtime-saveable than 1.6.7 is available: 1.8.3 [GradleDependency]
+/Users/medailab/projects/Readocx/app/build.gradle.kts:68: Warning: A newer version of androidx.compose.runtime:runtime-saveable than 1.6.7 is available: 1.8.3 [GradleDependency]
     implementation("androidx.compose.runtime:runtime-saveable:1.6.7")
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -76,9 +76,6 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
-/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
-/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar: Warning: checkServerTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
 /Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar: Warning: checkClientTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
 /Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/5.2.5/df9f2c52371eeba24db8ea8cafa77285c3cc0742/poi-ooxml-5.2.5.jar: Warning: checkServerTrusted is empty, which could cause insecure network traffic due to trusting arbitrary TLS/SSL certificates presented by peers [TrustAllX509TrustManager]
 
@@ -90,13 +87,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
 
    https://goo.gle/TrustAllX509TrustManager
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReadAloudService.kt:88: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReadAloudService.kt:88: Warning: Unnecessary; SDK_INT is always >= 26 [ObsoleteSdkInt]
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/styles.xml:12: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+/Users/medailab/projects/Readocx/app/src/main/res/values/styles.xml:12: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
         <item name="android:statusBarColor" tools:targetApi="l">@color/purple_700</item>
                                             ~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/themes.xml:9: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+/Users/medailab/projects/Readocx/app/src/main/res/values/themes.xml:9: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
                                             ~~~~~~~~~~~~~~~~~~~
 
@@ -109,13 +106,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:46: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:43: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
     var currentIndex by rememberSaveable { mutableStateOf(prefs.getInt("currentIndex", 0)) }
                                            ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:52: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    val speed = rememberSaveable { mutableStateOf(1.0f) }
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:45: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    val speed = rememberSaveable { mutableStateOf(prefs.getFloat("speechRate", 1.0f)) }
                                    ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:161: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:158: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
             var sliderPosition by remember { mutableStateOf(currentIndex.toFloat()) }
                                              ~~~~~~~~~~~~~~
 
@@ -134,22 +131,22 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    Identifier: androidx.compose.runtime
    Feedback: https://issuetracker.google.com/issues/new?component=612128
 
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
+/Users/medailab/projects/Readocx/app/src/main/res/values/colors.xml:4: Warning: The resource R.color.purple_700 appears to be unused [UnusedResources]
     <color name="purple_700">#3700B3</color>
            ~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
+/Users/medailab/projects/Readocx/app/src/main/res/values/colors.xml:5: Warning: The resource R.color.teal_200 appears to be unused [UnusedResources]
     <color name="teal_200">#03DAC5</color>
            ~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
+/Users/medailab/projects/Readocx/app/src/main/res/values/colors.xml:6: Warning: The resource R.color.teal_700 appears to be unused [UnusedResources]
     <color name="teal_700">#018786</color>
            ~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.black appears to be unused [UnusedResources]
+/Users/medailab/projects/Readocx/app/src/main/res/values/colors.xml:8: Warning: The resource R.color.black appears to be unused [UnusedResources]
     <color name="black">#000000</color>
            ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-mdpi/ic_launche.png: Warning: The resource R.mipmap.ic_launche appears to be unused [UnusedResources]
-/Users/medailab/projects/ReadPDF/app/src/main/res/values/styles.xml:3: Warning: The resource R.style.Theme_ReadAloudPDFOnlyFixed appears to be unused [UnusedResources]
-    <style name="Theme.ReadAloudPDFOnlyFixed" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/medailab/projects/Readocx/app/src/main/res/mipmap-mdpi/ic_launche.png: Warning: The resource R.mipmap.ic_launche appears to be unused [UnusedResources]
+/Users/medailab/projects/Readocx/app/src/main/res/values/styles.xml:3: Warning: The resource R.style.Theme_readocx appears to be unused [UnusedResources]
+    <style name="Theme.readocx" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+           ~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -184,10 +181,10 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    </lint>
    ```
 
-/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
-/Users/medailab/projects/ReadPDF/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/Readocx/app/src/main/res/mipmap-hdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/Readocx/app/src/main/res/mipmap-xhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/Readocx/app/src/main/res/mipmap-xxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
+/Users/medailab/projects/Readocx/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png: Warning: Launcher icons should not fill every pixel of their square region; see the design guide for details [IconLauncherShape]
 
    Explanation for issues of type "IconLauncherShape":
    According to the Android Design Guide
@@ -199,22 +196,22 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    The unique silhouette implies that your launcher icon should not be a
    filled square.
 
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/PdfRendererHelper.kt:21: Warning: Use the KTX function createBitmap instead? [UseKtx]
-            val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
-                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:44: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:41: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
         mutableStateOf(prefs.getString("fileUri", null)?.let { Uri.parse(it) })
                                                                ~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:60: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:57: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
             prefs.edit().putString("fileUri", it.toString()).putString("fileName", fileName).putInt("currentIndex", 0).apply()
             ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:105: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:86: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
                     prefs.edit().putInt("currentIndex", currentIndex).apply()
                     ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:168: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:126: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                prefs.edit().putFloat("speechRate", it).apply()
+                ~~~~~~~~~~~~
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:165: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
                     prefs.edit().putInt("currentIndex", currentIndex).apply()
                     ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:184: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/Readocx/app/src/main/java/com/example/Readocx/ReaderScreen.kt:181: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
                             prefs.edit().putInt("currentIndex", index).apply()
                             ~~~~~~~~~~~~
 
@@ -274,4 +271,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    </lint>
    ```
 
-0 errors, 38 warnings, 3 hints
+0 errors, 35 warnings, 3 hints

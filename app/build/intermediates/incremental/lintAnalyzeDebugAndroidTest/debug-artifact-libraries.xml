@@ -870,20 +870,6 @@
       resolved="org.apache.poi:poi-ooxml:5.2.5"
       provided="true"/>
   <library
-      name="com.tom-roush:pdfbox-android:2.0.27.0@aar"
-      jars="/Users/medailab/.gradle/caches/8.14.1/transforms/e316e92fca35a95c775d356fc7f0c842/transformed/jetified-pdfbox-android-2.0.27.0/jars/classes.jar"
-      resolved="com.tom-roush:pdfbox-android:2.0.27.0"
-      provided="true"
-      folder="/Users/medailab/.gradle/caches/8.14.1/transforms/e316e92fca35a95c775d356fc7f0c842/transformed/jetified-pdfbox-android-2.0.27.0"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="org.jetbrains:annotations:23.0.0@jar"
       jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/23.0.0/8cc20c07506ec18e0834947b84a864bfc094484e/annotations-23.0.0.jar"
       resolved="org.jetbrains:annotations:23.0.0"
@@ -932,21 +918,6 @@
       name="org.apache.commons:commons-collections4:4.4@jar"
       jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-collections4/4.4/62ebe7544cb7164d87e0637a2a6a2bdc981395e8/commons-collections4-4.4.jar"
       resolved="org.apache.commons:commons-collections4:4.4"
-      provided="true"/>
-  <library
-      name="org.bouncycastle:bcpkix-jdk15to18:1.72@jar"
-      jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcpkix-jdk15to18/1.72/32faf4d74dbc333fb3a7a6c80c30417cf888fc7a/bcpkix-jdk15to18-1.72.jar"
-      resolved="org.bouncycastle:bcpkix-jdk15to18:1.72"
-      provided="true"/>
-  <library
-      name="org.bouncycastle:bcutil-jdk15to18:1.72@jar"
-      jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcutil-jdk15to18/1.72/74d1589a616f7655a1922d0a773e958e87cd2ea0/bcutil-jdk15to18-1.72.jar"
-      resolved="org.bouncycastle:bcutil-jdk15to18:1.72"
-      provided="true"/>
-  <library
-      name="org.bouncycastle:bcprov-jdk15to18:1.72@jar"
-      jars="/Users/medailab/.gradle/caches/modules-2/files-2.1/org.bouncycastle/bcprov-jdk15to18/1.72/1c53885369e89f9798974bf63b55a764c54b5c61/bcprov-jdk15to18-1.72.jar"
-      resolved="org.bouncycastle:bcprov-jdk15to18:1.72"
       provided="true"/>
   <library
       name="androidx.constraintlayout:constraintlayout-solver:2.0.1@jar"

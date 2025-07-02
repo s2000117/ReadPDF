@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.readpdf"
+    package="com.example.readocx"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="34" />
-
     <!-- Foreground service 関連パーミッション -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
 
     <permission
-        android:name="com.example.readpdf.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.example.readocx.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.readpdf.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.example.readocx.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -25,9 +24,9 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ReadPDF" >
+        android:theme="@style/Theme.Readocx" >
         <activity
-            android:name="com.example.readpdf.MainActivity"
+            android:name="com.example.readocx.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,13 +36,13 @@
         </activity>
 
         <service
-            android:name="com.example.readpdf.ReadAloudService"
+            android:name="com.example.readocx.ReadAloudService"
             android:exported="false"
             android:foregroundServiceType="mediaPlayback" />
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.readpdf.androidx-startup"
+            android:authorities="com.example.readocx.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

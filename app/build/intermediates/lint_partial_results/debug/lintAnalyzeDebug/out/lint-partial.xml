@@ -3,7 +3,7 @@
     <map id="UnsafeIntentLaunch">
             <map id="unprotected">
                 <entry
-                    name="com.example.readpdf.MainActivity"
+                    name="com.example.readocx.MainActivity"
                     boolean="true"/>
             </map>
     </map>
@@ -42,17 +42,17 @@
             endOffset="210"/>
         <location id="R.mipmap.ic_launche"
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/mipmap-mdpi/ic_launche.png"/>
-        <location id="R.style.Theme_ReadAloudPDFOnlyFixed"
+        <location id="R.style.Theme_readocx"
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
             line="3"
             column="12"
             startOffset="109"
             endLine="3"
-            endColumn="46"
-            endOffset="143"/>
+            endColumn="32"
+            endOffset="129"/>
         <entry
             name="model"
-            string="attr[colorPrimary(R)],color[purple_500(U),purple_700(D),teal_200(D),teal_700(D),white(U),black(D)],mipmap[ic_launcher(U),ic_launche(D)],string[app_name(U)],style[Theme_ReadPDF(U),Theme_ReadAloudPDFOnlyFixed(D),Theme_MaterialComponents_DayNight_NoActionBar(E),Theme_Material3_DayNight(R)];a^d^1^5^0,b^c^1^2^5^3^4^6;;;"/>
+            string="attr[colorPrimary(R)],color[purple_500(U),purple_700(D),teal_200(D),teal_700(D),white(U),black(D)],mipmap[ic_launcher(U),ic_launche(D)],string[app_name(U)],style[Theme_Readocx(U),Theme_readocx(D),Theme_MaterialComponents_DayNight_NoActionBar(E),Theme_Material3_DayNight(R)];a^d^1^5^0,b^c^1^2^5^3^4^6;;;"/>
     </map>
 
 </incidents>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.readpdf.app-mergeDebugResources-52:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.example.readocx.app-mergeDebugResources-52:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/medailab/.gradle/caches/8.14.1/transforms/dc9b6cc8d62b05eb0c0bb558b46e972e/transformed/core-1.13.1/res/values-en-rGB/values-en-rGB.xml",
