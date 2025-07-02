@@ -112,15 +112,12 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
 /Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:46: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
     var currentIndex by rememberSaveable { mutableStateOf(prefs.getInt("currentIndex", 0)) }
                                            ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:48: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var speed by rememberSaveable { mutableStateOf(1.0f) }
-                                    ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:49: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var currentPage by rememberSaveable { mutableStateOf(0) }
-                                          ~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:50: Hint: Prefer mutableIntStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
-    var totalPages by remember { mutableStateOf(0) }
-                                 ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:52: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+    val speed = rememberSaveable { mutableStateOf(1.0f) }
+                                   ~~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:161: Hint: Prefer mutableFloatStateOf instead of mutableStateOf [AutoboxingStateCreation from androidx.compose.runtime]
+            var sliderPosition by remember { mutableStateOf(currentIndex.toFloat()) }
+                                             ~~~~~~~~~~~~~~
 
    Explanation for issues of type "AutoboxingStateCreation":
    Calling mutableStateOf<T>() when T is either backed by a primitive type on
@@ -205,18 +202,21 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
 /Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/PdfRendererHelper.kt:21: Warning: Use the KTX function createBitmap instead? [UseKtx]
             val bitmap = Bitmap.createBitmap(page.width, page.height, Bitmap.Config.ARGB_8888)
                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:45: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
-    var fileUri by rememberSaveable { mutableStateOf(prefs.getString("fileUri", null)?.let { Uri.parse(it) }) }
-                                                                                             ~~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:61: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-                prefs.edit().putString("fileUri", it.toString()).putString("fileName", fileName).putInt("currentIndex", 0).apply()
-                ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:112: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:44: Warning: Use the KTX extension function String.toUri instead? [UseKtx]
+        mutableStateOf(prefs.getString("fileUri", null)?.let { Uri.parse(it) })
+                                                               ~~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:60: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+            prefs.edit().putString("fileUri", it.toString()).putString("fileName", fileName).putInt("currentIndex", 0).apply()
+            ~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:105: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
                     prefs.edit().putInt("currentIndex", currentIndex).apply()
                     ~~~~~~~~~~~~
-/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:149: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
-                    prefs.edit().putInt("currentIndex", idx).apply()
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:168: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                    prefs.edit().putInt("currentIndex", currentIndex).apply()
                     ~~~~~~~~~~~~
+/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt:184: Warning: Use the KTX extension function SharedPreferences.edit instead? [UseKtx]
+                            prefs.edit().putInt("currentIndex", index).apply()
+                            ~~~~~~~~~~~~
 
    Explanation for issues of type "UseKtx":
    The Android KTX libraries decorates the Android platform SDK as well as
@@ -274,4 +274,4 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-8.14.1-bin.zip
    </lint>
    ```
 
-0 errors, 37 warnings, 4 hints
+0 errors, 38 warnings, 3 hints

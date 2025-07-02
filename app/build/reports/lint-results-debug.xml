@@ -369,44 +369,28 @@
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var speed by rememberSaveable { mutableStateOf(1.0f) }"
-        errorLine2="                                    ~~~~~~~~~~~~~~">
+        errorLine1="    val speed = rememberSaveable { mutableStateOf(1.0f) }"
+        errorLine2="                                   ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="48"
-            column="37"/>
+            line="52"
+            column="36"/>
     </issue>
 
     <issue
         id="AutoboxingStateCreation"
         severity="Hint"
-        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
+        message="Prefer `mutableFloatStateOf` instead of `mutableStateOf`"
         category="Performance"
         priority="3"
         summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
         explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var currentPage by rememberSaveable { mutableStateOf(0) }"
-        errorLine2="                                          ~~~~~~~~~~~~~~">
+        errorLine1="            var sliderPosition by remember { mutableStateOf(currentIndex.toFloat()) }"
+        errorLine2="                                             ~~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="49"
-            column="43"/>
-    </issue>
-
-    <issue
-        id="AutoboxingStateCreation"
-        severity="Hint"
-        message="Prefer `mutableIntStateOf` instead of `mutableStateOf`"
-        category="Performance"
-        priority="3"
-        summary="`State&lt;T>` will autobox values assigned to this state. Use a specialized state type instead."
-        explanation="Calling `mutableStateOf&lt;T>()` when `T` is either backed by a primitive type on the JVM or is a value class results in a state implementation that requires all state values to be boxed. This usually causes an additional allocation for each state write, and adds some additional work to auto-unbox values when reading the value of the state. Instead, prefer to use a specialized primitive state implementation for `Int`, `Long`, `Float`, and `Double` when the state does not need to track null values and does not override the default `SnapshotMutationPolicy`. See `mutableIntStateOf()`, `mutableLongStateOf()`, `mutableFloatStateOf()`, and `mutableDoubleStateOf()` for more information."
-        errorLine1="    var totalPages by remember { mutableStateOf(0) }"
-        errorLine2="                                 ~~~~~~~~~~~~~~">
-        <location
-            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="50"
-            column="34"/>
+            line="161"
+            column="46"/>
     </issue>
 
     <issue
@@ -573,12 +557,12 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="    var fileUri by rememberSaveable { mutableStateOf(prefs.getString(&quot;fileUri&quot;, null)?.let { Uri.parse(it) }) }"
-        errorLine2="                                                                                             ~~~~~~~~~~~~~">
+        errorLine1="        mutableStateOf(prefs.getString(&quot;fileUri&quot;, null)?.let { Uri.parse(it) })"
+        errorLine2="                                                               ~~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="45"
-            column="94"/>
+            line="44"
+            column="64"/>
     </issue>
 
     <issue
@@ -589,12 +573,12 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                prefs.edit().putString(&quot;fileUri&quot;, it.toString()).putString(&quot;fileName&quot;, fileName).putInt(&quot;currentIndex&quot;, 0).apply()"
-        errorLine2="                ~~~~~~~~~~~~">
+        errorLine1="            prefs.edit().putString(&quot;fileUri&quot;, it.toString()).putString(&quot;fileName&quot;, fileName).putInt(&quot;currentIndex&quot;, 0).apply()"
+        errorLine2="            ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="61"
-            column="17"/>
+            line="60"
+            column="13"/>
     </issue>
 
     <issue
@@ -609,7 +593,7 @@
         errorLine2="                    ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="112"
+            line="105"
             column="21"/>
     </issue>
 
@@ -621,12 +605,28 @@
         priority="6"
         summary="Use KTX extension function"
         explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
-        errorLine1="                    prefs.edit().putInt(&quot;currentIndex&quot;, idx).apply()"
+        errorLine1="                    prefs.edit().putInt(&quot;currentIndex&quot;, currentIndex).apply()"
         errorLine2="                    ~~~~~~~~~~~~">
         <location
             file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
-            line="149"
+            line="168"
             column="21"/>
+    </issue>
+
+    <issue
+        id="UseKtx"
+        severity="Warning"
+        message="Use the KTX extension function `SharedPreferences.edit` instead?"
+        category="Productivity"
+        priority="6"
+        summary="Use KTX extension function"
+        explanation="The Android KTX libraries decorates the Android platform SDK as well as various libraries with more convenient extension functions available from Kotlin, allowing you to use default parameters, named parameters, and more."
+        errorLine1="                            prefs.edit().putInt(&quot;currentIndex&quot;, index).apply()"
+        errorLine2="                            ~~~~~~~~~~~~">
+        <location
+            file="/Users/medailab/projects/ReadPDF/app/src/main/java/com/example/readpdf/ReaderScreen.kt"
+            line="184"
+            column="29"/>
     </issue>
 
 </issues>
